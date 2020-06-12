@@ -1,6 +1,6 @@
 <template>
   <aside class="menu">
-    <div class="menu__item">Můje přání</div>
+    <div class="menu__item">Moje přání</div>
     <div class="menu__item">Přání ostatních</div>
     <div class="menu__item">Zamluveno</div>
     <div class="menu__item">Kalendář</div>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: "Menu",
+  name: "Menu"
 };
 </script>
 

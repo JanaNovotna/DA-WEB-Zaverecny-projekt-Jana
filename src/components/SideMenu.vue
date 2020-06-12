@@ -1,7 +1,7 @@
 <template>
   <aside class="menu">
-    <img src="/src/assets/img/Logo2-rozprac.jpg" alt="Logo" class="logo" />
-    <div class="menu__item">Můje přání</div>
+    <img src="/assets/img/Logo2-rozprac.jpg" alt="Logo" class="logo" />
+    <div class="menu__item">Moje přání</div>
     <div class="menu__item">Přání ostatních</div>
     <div class="menu__item">Zamluveno</div>
     <div class="menu__item">Kalendář</div>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "SideMenu",
+  name: "SideMenu"
 };
 </script>
 
