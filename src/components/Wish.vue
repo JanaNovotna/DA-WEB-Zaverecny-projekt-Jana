@@ -1,7 +1,7 @@
 <template></template>
 <script>
 export default {
-  name: "OneWish",
+  name: "OneWish"
 };
 </script>
 <style scoped></style>
