@@ -7,24 +7,24 @@
     <textarea v-model="popis" id="popis" cols="30" rows="10"></textarea>
     <label for="web_address">Odkaz:</label>
     <input type="url" v-model="address" id="web_address" />
-    <button v-on:click="addPresent" class="add__present">Přidat dárek na seznam</button>
+    <button v-on:click="addPresent" class="add__present">
+      Přidat dárek na seznam
+    </button>
   </div>
 </template>
 <script>
-import Menu from "./Menu.vue";
 export default {
   name: "NewWish",
   data() {
     return {
       title: "",
       popis: "",
-      address: ""
+      address: "",
     };
   },
-  components: Menu,
   methods: {
-    addPresent() {}
-  }
+    addPresent() {},
+  },
 };
 </script>
 <style scoped>
@@ -45,7 +45,7 @@ textarea {
   margin: 0.75rem;
 }
 
-.add__present {
+/* .add__present {
   font-family: "Roboto Slab", serif;
   background-color: rgba(255, 217, 0, 0.884);
   color: #004445;
@@ -63,5 +63,5 @@ textarea {
   border: 1px solid rgb(255, 217, 0, 0.884);
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
+} */
 </style>

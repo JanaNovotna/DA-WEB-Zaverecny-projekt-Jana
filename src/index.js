@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './App.vue';
-import WishForm from "./components/wishForm.vue";
+import WishForm from "./components/WishForm.vue";
 import WishList from "./components/ExistingList.vue";
 import './index.html';
 
