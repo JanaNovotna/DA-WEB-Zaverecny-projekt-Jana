@@ -7,23 +7,24 @@
     <textarea v-model="popis" id="popis" cols="30" rows="10"></textarea>
     <label for="web_address">Odkaz:</label>
     <input type="url" v-model="address" id="web_address" />
-    <label for="photo">Obrázek dárku:</label>
-    <input type="file" name="photo" id="" />
-    <button v-on:click="addPresent" class="add__present">
-      Přidat dárek na seznam
-    </button>
+    <button v-on:click="addPresent" class="add__present">Přidat dárek na seznam</button>
   </div>
 </template>
 <script>
+import Menu from "./Menu.vue";
 export default {
   name: "NewWish",
   data() {
     return {
       title: "",
       popis: "",
-      address: "",
+      address: ""
     };
   },
+  components: Menu,
+  methods: {
+    addPresent() {}
+  }
 };
 </script>
 <style scoped>
@@ -33,7 +34,8 @@ export default {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  width: 80vw;
+  width: 95vw;
+  margin: 0 auto;
 }
 
 input,
@@ -44,9 +46,22 @@ textarea {
 }
 
 .add__present {
-  background-color: #ffd800;
+  font-family: "Roboto Slab", serif;
+  background-color: rgba(255, 217, 0, 0.884);
   color: #004445;
-  max-width: 15vw;
+  max-width: 20vw;
+  padding: 0.5rem;
+  border: 0;
   border-radius: 5px;
+  transition-duration: 0.4s;
+  float: right;
+}
+
+.add__present:hover {
+  background-color: #004445;
+  color: rgba(255, 217, 0, 0.884);
+  border: 1px solid rgb(255, 217, 0, 0.884);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 </style>

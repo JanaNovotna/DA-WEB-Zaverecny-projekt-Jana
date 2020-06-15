@@ -1,8 +1,14 @@
 <template>
   <aside class="menu">
     <logo />
-    <div class="menu__item">Zadat nové přání</div>
-    <div class="menu__item">Seznam přání</div>
+    <ul>
+      <li>
+        <a href="#">Zadat nové přání</a>
+      </li>
+      <li>
+        <a href="#">Seznam přání</a>
+      </li>
+    </ul>
   </aside>
 </template>
 
@@ -26,11 +32,31 @@ export default {
   color: #e7dfd5;
 }
 
-.menu__item {
-  background-color: rgba(255, 216, 0, 0.8);
-  color: #2c7873;
+.menu ul {
+  padding: 0;
+  list-style: none;
+}
+li {
+  display: inline-block;
+  text-align: center;
+  width: 18vw;
+  background-color: rgba(255, 217, 0, 0.884);
   border-radius: 5px;
-  height: 30px;
-  padding: 0 2rem;
+  transition-duration: 0.4s;
+  padding: 0.5rem 0;
+  margin: 0 3rem;
+}
+.menu a {
+  text-decoration: none;
+  color: #2c7873;
+  padding: 1rem 2rem;
+}
+
+li:hover {
+  background-color: #2c7873;
+}
+
+a:hover {
+  color: #ffd800;
 }
 </style>

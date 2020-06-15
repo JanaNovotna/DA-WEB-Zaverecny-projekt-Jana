@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <ourMenu />
+    <existinList />
     <div class="hlavni__obsah">
       <div>
         <h1>Dárky bez starostí</h1>
@@ -13,12 +14,14 @@
 <script>
 import Menu from "./components/Menu.vue";
 import NewWish from "./components/wishForm.vue";
+import List from "./components/ExistingList.vue";
 
 export default {
   name: "App",
   components: {
     ourMenu: Menu,
-    newWish: NewWish
+    newWish: NewWish,
+    existinList: List
   }
 };
 </script>
@@ -48,5 +51,16 @@ h1 {
 
 h2 {
   color: #e7dfd5;
+}
+@media (min-width: 640px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1024px) {
+}
+
+@media (min-width: 1280px) {
 }
 </style>
