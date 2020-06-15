@@ -3,10 +3,10 @@
     <logo />
     <ul>
       <li>
-        <a href="#">Zadat nové přání</a>
+        <router-link class="link" to="/nove_prani">Zadat nové přání</router-link>
       </li>
       <li>
-        <a href="#">Seznam přání</a>
+        <router-link class="link" to="/seznam_prani">Seznam přání</router-link>
       </li>
     </ul>
   </aside>
@@ -46,7 +46,7 @@ li {
   padding: 0.5rem 0;
   margin: 0 3rem;
 }
-.menu a {
+.menu .link {
   text-decoration: none;
   color: #2c7873;
   padding: 1rem 2rem;
@@ -56,7 +56,7 @@ li:hover {
   background-color: #2c7873;
 }
 
-a:hover {
+.link:hover {
   color: #ffd800;
 }
 </style>
