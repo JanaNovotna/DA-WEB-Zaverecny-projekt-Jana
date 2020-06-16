@@ -2,12 +2,15 @@
   <div class="list">
     <p>Vídíme, že máte svůj seznam již vytvořený. Když kliknete sem:</p>
     <button class="existing__list">Chci vidět svůj seznam dárků.</button>
-    <p>tak se k němu dostanete a můžete jej dle potřeby upravit a znovu odesalt svým přátelům.</p>
+    <p>
+      tak se k němu dostanete a můžete jej dle potřeby upravit a znovu odesalt
+      svým přátelům.
+    </p>
   </div>
 </template>
 <script>
 export default {
-  name: "ExistingList"
+  name: "ExistingList",
 };
 </script>
 <style scoped>
@@ -32,9 +35,8 @@ p {
 }
 
 .existing__list:hover {
-  background-color: #004445;
+  background-color: #2c7873;
   color: rgba(255, 217, 0, 0.849);
-  border: 1px solid rgba(255, 217, 0, 0.884);
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
