@@ -1,7 +1,58 @@
-<template></template>
+<template>
+  <div class="wish">
+    <div class="container_content">
+      <h3>{{title}}</h3>
+      <p>{{description}}</p>
+      <p>
+        Odkaz:
+        <a v-bind:href="link" target="_blank">ZDE</a>
+      </p>
+    </div>
+    <div class="container_button">
+      <book />
+    </div>
+  </div>
+</template>
 <script>
+import BookButton from "./BookButton.vue";
+import DeleteButton from "./DeleteButton.vue";
+import ReleaseButton from "./ReleaseButton.vue";
+
 export default {
-  name: "OneWish"
+  name: "Wish",
+  components: {
+    book: BookButton,
+    delete: DeleteButton,
+    release: ReleaseButton
+  },
+  props: ["title", "description", "link"]
 };
 </script>
-<style scoped></style>
+<style scoped>
+h3 {
+  color: #004445;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Roboto Slab", serif;
+  font-size: 1rem;
+  color: #6fb98f;
+}
+
+.wish {
+  display: flex;
+  justify-content: space-between;
+  margin: 5vh 0;
+  border: 1px solid #004445;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.container_button {
+  display: flex;
+  align-items: flex-start;
+}
+</style>

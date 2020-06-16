@@ -1,18 +1,14 @@
 <template>
   <div class="container">
     <ourMenu />
-    <div class="hlavni__obsah">
-      <div>
-        <h1>Dárky bez starostí</h1>
-        <newWish />
-      </div>
-    </div>
+    <div class="hlavni__obsah"></div>
+    <newWish />
   </div>
 </template>
 
 <script>
 import Menu from "./components/Menu.vue";
-import NewWish from "./components/wishForm.vue";
+import NewWish from "./components/WishForm.vue";
 
 export default {
   name: "App",
@@ -39,11 +35,12 @@ body {
 
 .hlavni__obsah {
   display: flex;
+  justify-content: center;
 }
 
 h1 {
   text-align: center;
-  color: #6fb98f;
+  color: rgba(255, 216, 0, 0.8);
 }
 
 h2 {

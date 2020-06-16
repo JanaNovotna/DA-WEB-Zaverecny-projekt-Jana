@@ -1,8 +1,8 @@
 <template>
   <aside class="menu">
     <logo />
-    <div class="menu__item">Zadat nové přání</div>
-    <div class="menu__item">Seznam přání</div>
+    <button class="menu__item">Zadat nové přání</button>
+    <button class="menu__item">Seznam přání</button>
   </aside>
 </template>
 
@@ -30,7 +30,9 @@ export default {
   background-color: rgba(255, 216, 0, 0.8);
   color: #2c7873;
   border-radius: 5px;
-  height: 30px;
-  padding: 0 2rem;
+  padding: 10px 20px;
+  border: none;
+  font-family: "Roboto Slab", serif;
+  font-size: 1.2rem;
 }
 </style>

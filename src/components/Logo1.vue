@@ -8,6 +8,6 @@ export default {
 </script>
 <style scoped>
 img {
-  width: 10rem;
+  width: 15rem;
 }
 </style>
