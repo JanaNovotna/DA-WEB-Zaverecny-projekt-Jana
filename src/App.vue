@@ -57,9 +57,14 @@ body {
   margin: 1rem;
 }
 
+.hlavni__obsah {
+  display: flex;
+  justify-content: center;
+}
+
 h1 {
   text-align: center;
-  color: #6fb98f;
+  color: rgba(255, 216, 0, 0.8);
 }
 
 h2 {

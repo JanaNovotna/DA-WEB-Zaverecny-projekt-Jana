@@ -61,5 +61,9 @@ li:hover {
 
 .link:hover {
   color: #ffd800;
+  padding: 10px 20px;
+  border: none;
+  font-family: "Roboto Slab", serif;
+  font-size: 1.2rem;
 }
 </style>

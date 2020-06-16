@@ -1,11 +1,11 @@
 <template>
   <div class="button">
-    <button>Smazat</button>
+    <button>Uvolnit</button>
   </div>
 </template>
 <script>
 export default {
-  name: "DeleteButton"
+  name: "ReleaseButton"
 };
 </script>
 <style scoped>
