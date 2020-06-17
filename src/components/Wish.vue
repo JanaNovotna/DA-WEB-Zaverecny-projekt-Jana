@@ -29,17 +29,11 @@ export default {
 };
 </script>
 <style scoped>
-h3 {
-  color: #004445;
-  font-size: 1.5rem;
-  margin: 0;
-}
-
 a {
   text-decoration: none;
   font-family: "Roboto Slab", serif;
   font-size: 1rem;
-  color: #6fb98f;
+  color: #004445;
 }
 
 .wish {

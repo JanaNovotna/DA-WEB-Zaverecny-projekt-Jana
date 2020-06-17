@@ -3,8 +3,12 @@
 </template>
 
 <script>
+import LandingPage from "./components/LandingPage.vue";
 export default {
-  name: "App"
+  name: "App",
+  components: {
+    landingPage: LandingPage
+  }
 };
 </script>
 
@@ -32,17 +36,20 @@ h1 {
   color: rgba(255, 216, 0, 0.8);
 }
 
-.hidden {
-  display: none;
-}
-
 h2 {
   color: #e7dfd5;
 }
 
-p {
-  text-align: center;
+h3 {
+  color: #004445;
+  font-size: 1.5rem;
+  margin: 0;
 }
+
+.hidden {
+  display: none;
+}
+
 .container {
   display: flex;
   flex-direction: column;

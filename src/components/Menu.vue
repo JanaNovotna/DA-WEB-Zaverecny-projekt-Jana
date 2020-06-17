@@ -3,10 +3,10 @@
     <logo />
     <ul>
       <li>
-        <router-link class="link" to="/nove_prani">Zadat nové přání</router-link>
+        <router-link class="main_button link" to="/nove_prani">Zadat nové přání</router-link>
       </li>
       <li>
-        <router-link class="link" to="/seznam_prani">Seznam přání</router-link>
+        <router-link class="main_button link" to="/muj_seznam">Seznam přání</router-link>
       </li>
     </ul>
   </aside>
@@ -27,23 +27,22 @@ export default {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-top: 2rem;
-  background-color: #004445;
-  color: #e7dfd5;
+  padding-top: 1rem;
 }
 
 .menu ul {
   padding: 0;
   list-style: none;
 }
+
 li {
   display: inline-block;
   text-align: center;
-  width: 18vw;
+  min-width: 20vw;
   background-color: rgba(255, 217, 0, 0.884);
   border-radius: 5px;
   transition-duration: 0.4s;
-  padding: 0.5rem 0;
+  padding: 0.5rem;
   margin: 0 3rem;
 }
 .menu .link {

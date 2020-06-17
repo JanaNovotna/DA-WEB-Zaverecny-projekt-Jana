@@ -4,7 +4,7 @@ import App from './App.vue';
 import LandingPage from './components/LandingPage.vue';
 import ListPage from './components/ListPage.vue'
 import WishForm from "./components/WishFormPage.vue";
-import WishList from "./components/ExistingList.vue";
+import WishList from "./components/WishListPage.vue";
 import './index.html';
 
 Vue.use(VueRouter);
@@ -12,10 +12,10 @@ Vue.use(VueRouter);
 const myRouter = new VueRouter({
   mode: 'history',
   routes: [
-    { path: '/', component: LandingPage },
-    { path: '/seznam_prani', component: ListPage },
-    { path: '/nove_prani', component: WishForm },
-    { path: '/muj_seznam', component: WishList },
+    { path: '/', name: "home", component: LandingPage },
+    { path: '/seznam_prani', name: "seznam přání", component: ListPage },
+    { path: '/nove_prani', name: "nové přání", component: WishForm },
+    { path: '/muj_seznam', name: "můj seznam", component: WishList },
   ],
 });
 

@@ -1,6 +1,6 @@
 <template>
-  <div class="button">
-    <button>Smazat</button>
+  <div>
+    <button class="main__button delete__button">Smazat</button>
   </div>
 </template>
 <script>
@@ -9,4 +9,7 @@ export default {
 };
 </script>
 <style scoped>
+.delete__button {
+  width: 15vw;
+}
 </style>

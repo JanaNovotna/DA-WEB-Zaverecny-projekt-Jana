@@ -7,7 +7,7 @@
     <textarea v-model="description" id="popis" cols="30" rows="10"></textarea>
     <label for="web_address">Odkaz:</label>
     <input type="url" v-model="link" id="web_address" />
-    <button v-on:click="addPresent" class="main__button">Přidat dárek na seznam</button>
+    <button v-on:click="addPresent" class="main__button add_btn">Přidat dárek na seznam</button>
   </div>
 </template>
 <script>
@@ -41,5 +41,9 @@ textarea {
   background-color: #e7dfd5;
   color: #000;
   margin: 0.75rem;
+}
+
+.add_btn {
+  width: 30vw;
 }
 </style>

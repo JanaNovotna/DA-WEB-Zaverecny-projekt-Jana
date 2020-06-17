@@ -1,16 +1,20 @@
 <template>
-  <div class="wishlist">
-    <wish
-      v-for="(wish, index) in wishes"
-      v-bind:title="wish.title"
-      v-bind:description="wish.description"
-      v-bind:link="wish.link"
-      v-bind:key="index"
-    />
+  <div class="wishListPage">
+    <logo />
+    <div class="wishlist">
+      <wish
+        v-for="(wish, index) in wishes"
+        v-bind:title="wish.title"
+        v-bind:description="wish.description"
+        v-bind:link="wish.link"
+        v-bind:key="index"
+      />
+    </div>
   </div>
 </template>
 <script>
 import Wish from "./Wish.vue";
+import Logo from "./Logo1.vue";
 
 export default {
   name: "WishList",
@@ -38,9 +42,22 @@ export default {
   },
 
   components: {
-    wish: Wish
+    wish: Wish,
+    logo: Logo
   }
 };
 </script>
 <style scoped>
+.wishlistPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wishlist {
+  background-color: #6fb98f;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  padding: 3rem;
+  border-radius: 5px;
+}
 </style>
