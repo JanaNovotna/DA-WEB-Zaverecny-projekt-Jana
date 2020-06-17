@@ -1,15 +1,15 @@
 <template>
   <div>
-    <button class="main__button delete__button">Smazat</button>
+    <button class="main__button book__button">Zamluv si mě</button>
   </div>
 </template>
 <script>
 export default {
-  name: "DeleteButton"
+  name: "BookButton"
 };
 </script>
 <style scoped>
-.delete__button {
+.book__button {
   width: 15vw;
 }
 </style>
