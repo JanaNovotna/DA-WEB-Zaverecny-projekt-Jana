@@ -1,7 +1,8 @@
 <template>
   <div class="list">
+    <ourLogo />
     <p>Vídíme, že máte svůj seznam již vytvořený. Když kliknete sem:</p>
-    <button class="existing__list">Chci vidět svůj seznam dárků.</button>
+    <button class="main__button">Chci vidět svůj seznam dárků.</button>
     <p>
       tak se k němu dostanete a můžete jej dle potřeby upravit a znovu odesalt
       svým přátelům.
@@ -9,8 +10,12 @@
   </div>
 </template>
 <script>
+import Logo from "./Logo1.vue";
 export default {
   name: "ExistingList",
+  components: {
+    ourLogo: Logo
+  }
 };
 </script>
 <style scoped>
@@ -21,23 +26,5 @@ export default {
 }
 p {
   text-align: center;
-}
-.existing__list {
-  font-family: "Roboto Slab", serif;
-  font-size: 1.2rem;
-  background-color: rgba(255, 217, 0, 0.884);
-  color: #2c7873;
-  max-width: 20vw;
-  padding: 0.5rem;
-  border: 0;
-  border-radius: 5px;
-  transition-duration: 0.4s;
-}
-
-.existing__list:hover {
-  background-color: #2c7873;
-  color: rgba(255, 217, 0, 0.849);
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 </style>

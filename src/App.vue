@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "App",
+  name: "App"
 };
 </script>
 
@@ -75,7 +75,7 @@ p {
   margin-bottom: 1rem;
 }
 
-.add__present {
+.main__button {
   font-family: "Roboto Slab", serif;
   text-decoration: none;
   text-align: center;
@@ -88,10 +88,9 @@ p {
   transition-duration: 0.4s;
 }
 
-.add__present:hover {
+.main__button:hover {
   background-color: #2c7873;
   color: rgba(255, 217, 0, 0.884);
-
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }

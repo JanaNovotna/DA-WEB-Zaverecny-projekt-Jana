@@ -3,15 +3,12 @@
     <logo />
     <ul>
       <li>
-        <router-link class="link" to="/nove_prani"
-          >Zadat nové přání</router-link
-        >
+        <router-link class="link" to="/nove_prani">Zadat nové přání</router-link>
       </li>
       <li>
         <router-link class="link" to="/seznam_prani">Seznam přání</router-link>
       </li>
     </ul>
-    <router-view />
   </aside>
 </template>
 
@@ -20,8 +17,8 @@ import Logo from "./Logo1.vue";
 export default {
   name: "Menu",
   components: {
-    logo: Logo,
-  },
+    logo: Logo
+  }
 };
 </script>
 

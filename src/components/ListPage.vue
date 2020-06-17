@@ -5,13 +5,13 @@
   </div>
 </template>
 <script>
-import Menu from "./components/Menu.vue";
-import WishForm from "./components/WishForm.vue";
+import Menu from "./Menu.vue";
+import WishForm from "./WishFormPage.vue";
 export default {
   name: "ListPage",
   components: {
     ourMenu: Menu,
-    wishForm: WishForm,
-  },
+    wishForm: WishForm
+  }
 };
 </script>
