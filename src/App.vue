@@ -1,45 +1,10 @@
 <template>
-  <div class="container">
-    <ourLogo />
-
-    <div class="hlavni__obsah">
-      <h1>Dárky bez starostí</h1>
-      <p>Vítejte na stránkách, které vám pomohou se starostmi s dárky.</p>
-      <h2>Jak to funguje?</h2>
-      <div class="how_it_works">
-        <div class="description">
-          <img src="assets/img/present.png" alt="Dárek" />
-          <p>Vytvořte si seznam dárků.</p>
-          <img src="assets/img/list.png" alt="Seznam" />
-        </div>
-        <div class="description">
-          <img src="assets/img/present.png" alt="Dárek" />
-          <p>Pošlete seznam svým přátelům.</p>
-          <img src="assets/img/mail.png" alt="Obálka" />
-          <p>Přátele si zamluví dárek, který vám chtějí pořídit.</p>
-        </div>
-        <div class="description">
-          <img src="assets/img/present.png" alt="Dárek" />
-          <p>Těšte se na to, co dostane za dárky!</p>
-          <img src="assets/img/openedGift.png" alt="Otevřený dárek" />
-        </div>
-      </div>
-      <router-link class="add__present" to="/nove_prani"
-        >Zadat nové přání</router-link
-      >
-      <router-view />
-    </div>
-  </div>
+  <router-view />
 </template>
 
 <script>
-import Logo from "./components/Logo1.vue";
-
 export default {
   name: "App",
-  components: {
-    ourLogo: Logo,
-  },
 };
 </script>
 
@@ -67,6 +32,10 @@ h1 {
   color: rgba(255, 216, 0, 0.8);
 }
 
+.hidden {
+  display: none;
+}
+
 h2 {
   color: #e7dfd5;
 }
@@ -89,8 +58,11 @@ p {
   flex-direction: column;
   align-items: flex-start;
 }
-
-.description img {
+.icon {
+  width: 2rem;
+  margin: 0 auto;
+}
+.des_icon {
   width: 4rem;
   margin: 0 auto;
 }

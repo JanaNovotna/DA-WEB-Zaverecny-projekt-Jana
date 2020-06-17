@@ -4,9 +4,9 @@
     <label for="title">Název dárku:</label>
     <input type="text" v-model="title" id="title" />
     <label for="popis">Krátký popis dárku:</label>
-    <textarea v-model="popis" id="popis" cols="30" rows="10"></textarea>
+    <textarea v-model="description" id="popis" cols="30" rows="10"></textarea>
     <label for="web_address">Odkaz:</label>
-    <input type="url" v-model="address" id="web_address" />
+    <input type="url" v-model="link" id="web_address" />
     <button v-on:click="addPresent" class="add__present">
       Přidat dárek na seznam
     </button>
@@ -18,8 +18,8 @@ export default {
   data() {
     return {
       title: "",
-      popis: "",
-      address: "",
+      descriptin: "",
+      link: "",
     };
   },
   methods: {
