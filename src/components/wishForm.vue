@@ -1,5 +1,5 @@
 <template>
-  <div class="newWish">
+  <div class="wish">
     <h2>Přidání nového dárku:</h2>
     <label for="title">Název dárku:</label>
     <input type="text" v-model="title" id="title" />
@@ -8,26 +8,24 @@
     <label for="web_address">Odkaz:</label>
     <input type="url" v-model="address" id="web_address" />
     <label for="photo">Obrázek dárku:</label>
-    <input type="file" name="photo" id="" />
-    <button v-on:click="addPresent" class="add__present">
-      Přidat dárek na seznam
-    </button>
+    <input type="file" name="photo" id />
+    <button v-on:click="addPresent" class="add__present">Přidat dárek na seznam</button>
   </div>
 </template>
 <script>
 export default {
-  name: "NewWish",
+  name: "Wish",
   data() {
     return {
       title: "",
       popis: "",
-      address: "",
+      address: ""
     };
-  },
+  }
 };
 </script>
 <style scoped>
-.newWish {
+.wish {
   background-color: #004445;
   color: #e7dfd5;
   display: flex;

@@ -1,20 +1,24 @@
 <template>
   <div class="container">
     <ourMenu />
-    <div class="hlavni__obsah"></div>
-    <newWish />
+    <div class="hlavni__obsah">
+      <newWish />
+      <wishPage />
+    </div>
   </div>
 </template>
 
 <script>
 import Menu from "./components/Menu.vue";
 import NewWish from "./components/WishForm.vue";
+import WishPage from "./components/WishPage.vue";
 
 export default {
   name: "App",
   components: {
     ourMenu: Menu,
-    newWish: NewWish
+    newWish: NewWish,
+    wishPage: WishPage
   }
 };
 </script>
@@ -35,7 +39,8 @@ body {
 
 .hlavni__obsah {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
