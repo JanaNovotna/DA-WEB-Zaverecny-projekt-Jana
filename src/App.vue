@@ -29,16 +29,19 @@
       >
       <router-view />
     </div>
+    <wishPage />
   </div>
 </template>
 
 <script>
 import Logo from "./components/Logo1.vue";
+import WishPage from "./components/wishPage.vue";
 
 export default {
   name: "App",
   components: {
     ourLogo: Logo,
+    wishPage: WishPage,
   },
 };
 </script>
