@@ -5,11 +5,11 @@
 </template>
 <script>
 export default {
-  name: "BookButton"
+  name: "BookButton",
 };
 </script>
 <style scoped>
 .book__button {
-  width: 15vw;
+  min-width: 15vw;
 }
 </style>

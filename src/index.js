@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import VModal from 'vue-js-modal'
 import App from './App.vue';
 import LandingPage from './components/LandingPage.vue';
 import ListPage from './components/ListPage.vue'
@@ -8,6 +9,7 @@ import WishList from "./components/WishListPage.vue";
 import './index.html';
 
 Vue.use(VueRouter);
+Vue.use(VModal)
 
 const myRouter = new VueRouter({
   mode: 'history',

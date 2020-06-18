@@ -7,8 +7,8 @@ import LandingPage from "./components/LandingPage.vue";
 export default {
   name: "App",
   components: {
-    landingPage: LandingPage
-  }
+    landingPage: LandingPage,
+  },
 };
 </script>
 
