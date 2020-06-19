@@ -11,7 +11,8 @@
       <wishForm />
     </div>
     <div class="container_button">
-      <button @click="getURL">Tady je odkaz pro sdílení</button>
+      <button class="main__button" @click="getURL">Tady je odkaz pro sdílení</button>
+      <div class="url"></div>
     </div>
   </div>
 </template>
@@ -23,6 +24,7 @@ export default {
   name: "WishPage",
 
   components: {
+<<<<<<< HEAD
     wishList: WishList,
     wishForm: WishForm
   },
@@ -30,17 +32,25 @@ export default {
     return {
       isModalOpen: false
     };
+=======
+    wishList: WishList
+>>>>>>> bb06cd4ad0f2dfd0d79a731dfd7684939e1fe402
   },
   methods: {
     getURL() {
       let URL = window.location.href;
+      document.querySelector(".url").textContent = `${URL}`;
       console.log(URL);
     },
     show() {
       this.isModalOpen = true;
     },
     hide() {
+<<<<<<< HEAD
       this.isModalOpen = false;
+=======
+      this.$modal.hide("newWish");
+>>>>>>> bb06cd4ad0f2dfd0d79a731dfd7684939e1fe402
     }
   }
 };
@@ -79,5 +89,9 @@ button {
   font-size: 1.3rem;
   font-weight: bold;
   margin: 5vh 0;
+}
+
+.url {
+  background-color: #2c7873;
 }
 </style>
