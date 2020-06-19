@@ -47,7 +47,7 @@ export default {
 </script>
 <style scoped>
 .newWish {
-  color: #e7dfd5;
+  color: #cac5be;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -68,7 +68,7 @@ export default {
 
 input,
 textarea {
-  background-color: #e7dfd5;
+  background-color: #d4d3d3;
   color: #000;
   margin: 0.75rem;
 }
