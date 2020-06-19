@@ -17,8 +17,8 @@ export default {
   name: "WishPage",
 
   components: {
-    wishList: WishList
-  }
+    wishList: WishList,
+  },
 };
 </script>
 <style scoped>

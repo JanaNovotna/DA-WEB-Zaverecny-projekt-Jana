@@ -1,6 +1,5 @@
 <template>
   <div class="wishListPage">
-    <logo />
     <div class="wishlist">
       <wish
         v-for="(wish, index) in wishes"
