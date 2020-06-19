@@ -1,9 +1,9 @@
 <template>
   <div>
     <ourMenu />
-    <div v-if="isModalOpen" class="modal">
+    <!-- <div v-if="isModalOpen" class="modal">
       <wishForm />
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
@@ -15,11 +15,11 @@ export default {
     ourMenu: Menu,
     wishForm: WishForm,
   },
-  data() {
-    return {
-      isModalOpen: false,
-    };
-  },
+  // data() {
+  //   return {
+  //     isModalOpen: false,
+  //   };
+  // },
   methods: {
     show() {
       this.$modal.show("newWish");

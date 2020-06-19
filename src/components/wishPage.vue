@@ -3,6 +3,10 @@
     <div class="container_title">
       <h2>Seznam mých přání</h2>
     </div>
+    <wishList />
+    <div class="container_button">
+      <button @click="show">Vložit přání</button>
+    </div>
     <div v-if="isModalOpen" class="modal">
       <wishForm v-on:push="addWish($event)" />
     </div>
@@ -18,6 +22,7 @@
 </template>
 <script>
 import WishList from "./WishList.vue";
+import WishForm from "./WishForm.vue";
 
 export default {
   name: "WishPage",
@@ -47,8 +52,13 @@ export default {
 
   components: {
     wishList: WishList,
+    wishForm: WishForm,
   },
-
+  data() {
+    return {
+      isModalOpen: false,
+    };
+  },
   methods: {
     getURL() {
       let URL = window.location.href;
@@ -56,10 +66,10 @@ export default {
       console.log(URL);
     },
     show() {
-      this.$modal.show("newWish");
+      this.isModalOpen = true;
     },
     hide() {
-      this.$modal.hide("newWish");
+      this.isModalOpen = false;
     },
     addWish() {
       this.wishes.push({
@@ -72,6 +82,15 @@ export default {
 };
 </script>
 <style scoped>
+.modal {
+  width: 100vw;
+  height: 100wh;
+  background-color: black;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
 .wishpage {
   margin: 10vh 0;
   padding: 0 5vw;
