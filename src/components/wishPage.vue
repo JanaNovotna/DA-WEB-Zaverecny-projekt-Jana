@@ -69,14 +69,12 @@ export default {
     hide() {
       this.isModalOpen = false;
     },
-    addWish() {
-      this.wishes.push({
-        title: "Autíčko na dálkové ovládání",
-        description: "Hasiči nebo policajti.",
-        link: "https://cdn.alza.cz/ImgW.ashx?fd=f3&cd=HRAif10801"
-      });
-    }
-  }
+
+    addWish(value) {
+      this.wishes.push(value);
+    },
+  },
+
 };
 </script>
 <style scoped>
