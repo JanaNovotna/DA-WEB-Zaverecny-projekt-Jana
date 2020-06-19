@@ -1,11 +1,11 @@
 <template>
   <div class="wish">
     <div class="container_content">
-      <h3>{{ title }}</h3>
-      <p>{{ description }}</p>
+      <h3>{{ wish.title }}</h3>
+      <p>{{ wish.description }}</p>
       <p>
         Odkaz:
-        <a v-bind:href="link" target="_blank">ZDE</a>
+        <a v-bind:href="wish.link" target="_blank">ZDE</a>
       </p>
     </div>
     <div class="container_button">
@@ -19,9 +19,9 @@ import Button from "./Button.vue";
 export default {
   name: "Wish",
   components: {
-    myButton: Button
+    myButton: Button,
   },
-  props: ["title", "description", "link"]
+  props: ["wish"],
 };
 </script>
 <style scoped>

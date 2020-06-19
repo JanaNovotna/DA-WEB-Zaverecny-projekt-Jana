@@ -3,12 +3,9 @@
     <div class="wishlist">
       <wish
         v-for="(wish, index) in wishes"
-        v-bind:title="wish.title"
-        v-bind:description="wish.description"
-        v-bind:link="wish.link"
+        v-bind:wish="wish"
         v-bind:idx="index"
-        v-bind:key="wish.title"
-        v-on:push="addWish($event)"
+        v-bind:key="index"
       />
     </div>
   </div>
@@ -19,43 +16,13 @@ import Logo from "./Logo1.vue";
 
 export default {
   name: "WishList",
-  data() {
-    return {
-      wishes: [
-        {
-          title: "Lízátko",
-          description: "Velké, červeno-bílé, sladké.",
-          link: "https://static.glami.cz/img/520x520bt/212315474.jpg"
-        },
-        {
-          title: "Omalovánky",
-          description: "Včetně pastelek.",
-          link:
-            "https://www.detskyusmev.eu/fotky79138/fotos/_vyrn_3864b96536124.jpg"
-        },
-        {
-          title: "Autíčko na dálkové ovládání",
-          description: "Hasiči nebo policajti.",
-          link: "https://cdn.alza.cz/ImgW.ashx?fd=f3&cd=HRAif10801"
-        }
-      ]
-    };
-  },
 
-  methods: {
-    addWish() {
-      this.wishes.push({
-        title: "Autíčko na dálkové ovládání",
-        description: "Hasiči nebo policajti.",
-        link: "https://cdn.alza.cz/ImgW.ashx?fd=f3&cd=HRAif10801"
-      });
-    }
-  },
+  props: ["wishes"],
 
   components: {
     wish: Wish,
-    logo: Logo
-  }
+    logo: Logo,
+  },
 };
 </script>
 <style scoped>

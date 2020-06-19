@@ -8,11 +8,15 @@
       <button @click="show">Vložit přání</button>
     </div>
     <div v-if="isModalOpen" class="modal">
-      <wishForm />
+      <wishForm v-on:push="addWish($event)" />
       <button @click="hide" class="hide__btn">X</button>
     </div>
+
+    <wishList v-bind:wishes="wishes" />
     <div class="container_button">
-      <button class="main__button" @click="getURL">Tady je odkaz pro sdílení</button>
+      <button class="main__button" @click="getURL">
+        Tady je odkaz pro sdílení
+      </button>
       <div class="url"></div>
     </div>
   </div>
@@ -24,13 +28,36 @@ import WishForm from "./WishForm.vue";
 export default {
   name: "WishPage",
 
+  data() {
+    return {
+      wishes: [
+        {
+          title: "Lízátko",
+          description: "Velké, červeno-bílé, sladké.",
+          link: "https://static.glami.cz/img/520x520bt/212315474.jpg",
+        },
+        {
+          title: "Omalovánky",
+          description: "Včetně pastelek.",
+          link:
+            "https://www.detskyusmev.eu/fotky79138/fotos/_vyrn_3864b96536124.jpg",
+        },
+        {
+          title: "Autíčko na dálkové ovládání",
+          description: "Hasiči nebo policajti.",
+          link: "https://cdn.alza.cz/ImgW.ashx?fd=f3&cd=HRAif10801",
+        },
+      ],
+    };
+  },
+
   components: {
     wishList: WishList,
-    wishForm: WishForm
+    wishForm: WishForm,
   },
   data() {
     return {
-      isModalOpen: false
+      isModalOpen: false,
     };
   },
   methods: {
@@ -44,8 +71,15 @@ export default {
     },
     hide() {
       this.isModalOpen = false;
-    }
-  }
+    },
+    addWish() {
+      this.wishes.push({
+        title: "Autíčko na dálkové ovládání",
+        description: "Hasiči nebo policajti.",
+        link: "https://cdn.alza.cz/ImgW.ashx?fd=f3&cd=HRAif10801",
+      });
+    },
+  },
 };
 </script>
 <style scoped>
