@@ -4,7 +4,6 @@
       <wish
         v-for="(wish, index) in wishes"
         v-bind:wish="wish"
-        v-bind:idx="index"
         v-bind:key="index"
       />
     </div>
