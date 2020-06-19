@@ -9,6 +9,7 @@
     </div>
     <div v-if="isModalOpen" class="modal">
       <wishForm v-on:push="addWish($event)" />
+      <button @click="hide" class="hide__btn">X</button>
     </div>
 
     <wishList v-bind:wishes="wishes" />
@@ -85,7 +86,7 @@ export default {
 .modal {
   width: 100vw;
   height: 100wh;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.85);
   position: fixed;
   left: 0;
   top: 0;
@@ -115,6 +116,15 @@ button {
   font-size: 1.3rem;
   font-weight: bold;
   margin: 5vh 0;
+}
+
+.hide__btn {
+  position: absolute;
+  right: 2vw;
+  top: -2vh;
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
 }
 
 .url {
