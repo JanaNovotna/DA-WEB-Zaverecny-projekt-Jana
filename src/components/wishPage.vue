@@ -3,16 +3,18 @@
     <div class="container_title">
       <h2>Seznam mých přání</h2>
     </div>
-    <wishList />
-    <div class="container_button">
-      <button @click="show">Vložit přání</button>
-    </div>
+
     <div v-if="isModalOpen" class="modal">
       <wishForm v-on:push="addWish($event)" />
       <button @click="hide" class="hide__btn">X</button>
     </div>
 
     <wishList v-bind:wishes="wishes" />
+
+    <div class="container_button">
+      <button @click="show">Vložit přání</button>
+    </div>
+
     <div class="container_button">
       <button class="main__button" @click="getURL">
         Tady je odkaz pro sdílení
@@ -48,6 +50,7 @@ export default {
           link: "https://cdn.alza.cz/ImgW.ashx?fd=f3&cd=HRAif10801",
         },
       ],
+      isModalOpen: false,
     };
   },
 
@@ -55,11 +58,7 @@ export default {
     wishList: WishList,
     wishForm: WishForm,
   },
-  data() {
-    return {
-      isModalOpen: false,
-    };
-  },
+
   methods: {
     getURL() {
       let URL = window.location.href;
