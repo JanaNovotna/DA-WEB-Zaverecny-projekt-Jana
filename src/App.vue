@@ -87,6 +87,7 @@ h3 {
   font-family: "Roboto Slab", serif;
   text-decoration: none;
   text-align: center;
+  font-size: 1.1rem;
   background-color: rgba(255, 217, 0, 0.884);
   color: #2c7873;
   max-width: 50vw;
