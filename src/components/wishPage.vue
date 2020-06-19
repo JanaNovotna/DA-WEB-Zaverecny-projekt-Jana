@@ -9,11 +9,10 @@
     </div>
     <div v-if="isModalOpen" class="modal">
       <wishForm />
+      <button @click="hide" class="hide__btn">X</button>
     </div>
     <div class="container_button">
-      <button class="main__button" @click="getURL">
-        Tady je odkaz pro sdílení
-      </button>
+      <button class="main__button" @click="getURL">Tady je odkaz pro sdílení</button>
       <div class="url"></div>
     </div>
   </div>
@@ -27,11 +26,11 @@ export default {
 
   components: {
     wishList: WishList,
-    wishForm: WishForm,
+    wishForm: WishForm
   },
   data() {
     return {
-      isModalOpen: false,
+      isModalOpen: false
     };
   },
   methods: {
@@ -45,15 +44,15 @@ export default {
     },
     hide() {
       this.isModalOpen = false;
-    },
-  },
+    }
+  }
 };
 </script>
 <style scoped>
 .modal {
   width: 100vw;
   height: 100wh;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.85);
   position: fixed;
   left: 0;
   top: 0;
@@ -83,6 +82,15 @@ button {
   font-size: 1.3rem;
   font-weight: bold;
   margin: 5vh 0;
+}
+
+.hide__btn {
+  position: absolute;
+  right: 2vw;
+  top: -2vh;
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
 }
 
 .url {
