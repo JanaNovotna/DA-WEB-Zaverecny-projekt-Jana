@@ -21,10 +21,16 @@
         <div class="description">
           <img src="assets/img/present.png" alt="Dárek" class="icon" />
           <p>Těšte se na to, co dostane za dárky!</p>
-          <img src="assets/img/openedGift.png" alt="Otevřený dárek" class="des_icon" />
+          <img
+            src="assets/img/openedGift.png"
+            alt="Otevřený dárek"
+            class="des_icon"
+          />
         </div>
       </div>
-      <router-link class="main__button" to="/nove_prani">Zadat nové přání</router-link>
+      <router-link class="main__button" to="/seznam_prani"
+        >Zadat nové přání</router-link
+      >
     </div>
   </div>
 </template>
@@ -34,8 +40,8 @@ import Logo from "./Logo1.vue";
 export default {
   name: "LandingPage",
   components: {
-    ourLogo: Logo
-  }
+    ourLogo: Logo,
+  },
 };
 </script>
 <style scoped>

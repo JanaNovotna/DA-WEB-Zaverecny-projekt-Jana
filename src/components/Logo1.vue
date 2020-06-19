@@ -1,9 +1,11 @@
 <template>
-  <img src="../assets/img/logoFinal.png" alt="Logo 4U" />
+  <router-link to="/">
+    <img src="../assets/img/logoFinal.png" alt="Logo 4U" />
+  </router-link>
 </template>
 <script>
 export default {
-  name: "Logo"
+  name: "Logo",
 };
 </script>
 <style scoped>

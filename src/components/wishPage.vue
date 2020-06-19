@@ -17,15 +17,15 @@ export default {
   name: "WishPage",
 
   components: {
-    wishList: WishList
+    wishList: WishList,
   },
 
   methods: {
     getURL() {
       let URL = window.location.href;
       console.log(URL);
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>

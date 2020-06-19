@@ -1,7 +1,9 @@
 <template>
   <div>
     <ourMenu />
-    <wishForm />
+    <div v-if="isModalOpen" class="modal">
+      <wishForm />
+    </div>
   </div>
 </template>
 <script>
@@ -11,7 +13,27 @@ export default {
   name: "ListPage",
   components: {
     ourMenu: Menu,
-    wishForm: WishForm
-  }
+    wishForm: WishForm,
+  },
+  data() {
+    return {
+      isModalOpen: false,
+    };
+  },
+  methods: {
+    show() {
+      this.$modal.show("newWish");
+    },
+    hide() {
+      this.$modal.hide("newWish");
+    },
+  },
 };
 </script>
+<style scoped>
+.modal {
+  position: absolute;
+  left: auto;
+  right: auto;
+}
+</style>

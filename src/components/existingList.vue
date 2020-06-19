@@ -14,8 +14,8 @@ import Logo from "./Logo1.vue";
 export default {
   name: "ExistingList",
   components: {
-    ourLogo: Logo
-  }
+    ourLogo: Logo,
+  },
 };
 </script>
 <style scoped>
