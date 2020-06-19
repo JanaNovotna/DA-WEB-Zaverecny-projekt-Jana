@@ -3,6 +3,9 @@
     <div class="container_title">
       <h2>Seznam mých přání</h2>
     </div>
+    <div v-if="isModalOpen" class="modal">
+      <wishForm />
+    </div>
 
     <wishList />
     <div class="container_button">
@@ -26,6 +29,12 @@ export default {
       let URL = window.location.href;
       document.querySelector(".url").textContent = `${URL}`;
       console.log(URL);
+    },
+    show() {
+      this.$modal.show("newWish");
+    },
+    hide() {
+      this.$modal.hide("newWish");
     }
   }
 };
@@ -33,8 +42,6 @@ export default {
 <style scoped>
 .wishpage {
   margin: 10vh 0;
-  width: 60%;
-  background-color: #2c7873;
   padding: 0 5vw;
 }
 
@@ -56,7 +63,7 @@ button {
   font-family: "Roboto Slab", serif;
   font-size: 1.3rem;
   font-weight: bold;
-  margin-bottom: 5vh;
+  margin: 5vh 0;
 }
 
 .url {

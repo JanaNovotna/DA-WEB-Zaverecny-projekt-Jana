@@ -42,6 +42,11 @@ a {
   padding: 1rem;
 }
 
+.container_button {
+  display: flex;
+  justify-content: right;
+}
+
 @media (min-width: 640px) {
   .wish {
     flex-direction: row;
@@ -49,7 +54,6 @@ a {
   }
 
   .container_button {
-    display: flex;
     align-items: flex-start;
   }
 }
