@@ -32,7 +32,7 @@
 </template>
 <script>
 import Logo from "./Logo1.vue";
-import WishPage from "./WishPage.vue";
+import WishPage from "./wishPage.vue";
 
 export default {
   name: "LandingPage",
