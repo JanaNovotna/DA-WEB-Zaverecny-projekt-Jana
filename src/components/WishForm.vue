@@ -1,12 +1,5 @@
 <template>
-  <modal
-    name="newWish"
-    class="newWish"
-    :width="600"
-    :height="300"
-    @before-open="beforeOpen"
-    @before-close="beforeClose"
-    ><b>{{ time }}</b>
+  <div name="newWish" class="newWish">
     <ourMenu />
     <h2>Přidání nového dárku:</h2>
     <label for="title">Název dárku:</label>
@@ -15,43 +8,27 @@
     <textarea v-model="description" id="popis" cols="30" rows="10"></textarea>
     <label for="web_address">Odkaz:</label>
     <input type="url" v-model="link" id="web_address" />
-    <button v-on:click="addPresent" class="main__button add_btn">
-      Přidat dárek na seznam
-    </button>
-  </modal>
+    <button v-on:click="addPresent" class="main__button add_btn">Přidat dárek na seznam</button>
+  </div>
 </template>
 <script>
 import Menu from "./Menu.vue";
 export default {
   name: "NewWish",
   components: {
-    ourMenu: Menu,
+    ourMenu: Menu
   },
   data() {
     return {
       title: "",
       description: "",
-      link: "",
-      time: 0,
-      duration: 5000,
+      link: ""
     };
   },
 
   methods: {
-    addPresent() {},
-    beforeOpen(event) {
-      console.log(event);
-      // Set the opening time of the modal
-      this.time = Date.now();
-    },
-    beforeClose(event) {
-      console.log(event);
-      // If modal was open less then 5000 ms - prevent closing it
-      if (this.time + this.duration < Date.now()) {
-        event.cancel();
-      }
-    },
-  },
+    addPresent() {}
+  }
 };
 </script>
 <style scoped>
