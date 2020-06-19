@@ -6,19 +6,17 @@
 
     <div v-if="isModalOpen" class="modal">
       <wishForm v-on:push="addWish($event)" />
-      <button @click="hide" class="hide__btn">X</button>
+      <button @click="hide" class="main__button hide__btn">X</button>
     </div>
 
     <wishList v-bind:wishes="wishes" />
 
     <div class="container_button">
-      <button @click="show">Vložit přání</button>
+      <button @click="show" class="main__button">Vložit přání</button>
     </div>
 
     <div class="container_button">
-      <button class="main__button" @click="getURL">
-        Tady je odkaz pro sdílení
-      </button>
+      <button class="main__button" @click="getURL">Tady je odkaz pro sdílení</button>
       <div class="url"></div>
     </div>
   </div>
@@ -36,27 +34,27 @@ export default {
         {
           title: "Lízátko",
           description: "Velké, červeno-bílé, sladké.",
-          link: "https://static.glami.cz/img/520x520bt/212315474.jpg",
+          link: "https://static.glami.cz/img/520x520bt/212315474.jpg"
         },
         {
           title: "Omalovánky",
           description: "Včetně pastelek.",
           link:
-            "https://www.detskyusmev.eu/fotky79138/fotos/_vyrn_3864b96536124.jpg",
+            "https://www.detskyusmev.eu/fotky79138/fotos/_vyrn_3864b96536124.jpg"
         },
         {
           title: "Autíčko na dálkové ovládání",
           description: "Hasiči nebo policajti.",
-          link: "https://cdn.alza.cz/ImgW.ashx?fd=f3&cd=HRAif10801",
-        },
+          link: "https://cdn.alza.cz/ImgW.ashx?fd=f3&cd=HRAif10801"
+        }
       ],
-      isModalOpen: false,
+      isModalOpen: false
     };
   },
 
   components: {
     wishList: WishList,
-    wishForm: WishForm,
+    wishForm: WishForm
   },
 
   methods: {
@@ -75,10 +73,10 @@ export default {
       this.wishes.push({
         title: "Autíčko na dálkové ovládání",
         description: "Hasiči nebo policajti.",
-        link: "https://cdn.alza.cz/ImgW.ashx?fd=f3&cd=HRAif10801",
+        link: "https://cdn.alza.cz/ImgW.ashx?fd=f3&cd=HRAif10801"
       });
-    },
-  },
+    }
+  }
 };
 </script>
 <style scoped>
@@ -106,14 +104,8 @@ h2 {
 }
 
 button {
-  background-color: rgba(255, 216, 0, 0.8);
-  color: #2c7873;
-  border: none;
-  border-radius: 5px;
   padding: 10px 20px;
-  font-family: "Roboto Slab", serif;
   font-size: 1.3rem;
-  font-weight: bold;
   margin: 5vh 0;
 }
 
