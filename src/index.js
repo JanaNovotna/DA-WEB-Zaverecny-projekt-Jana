@@ -3,8 +3,7 @@ import VueRouter from 'vue-router';
 import App from './App.vue';
 import LandingPage from './components/LandingPage.vue';
 import ListPage from './components/ListPage.vue'
-import WishForm from "./components/WishFormPage.vue";
-import WishList from "./components/WishListPage.vue";
+import WishPage from "./components/WishPage.vue";
 import './index.html';
 
 Vue.use(VueRouter);
@@ -14,8 +13,7 @@ const myRouter = new VueRouter({
   routes: [
     { path: '/', name: "home", component: LandingPage },
     { path: '/seznam_prani', name: "seznam přání", component: ListPage },
-    { path: '/nove_prani', name: "nové přání", component: WishForm },
-    { path: '/muj_seznam', name: "můj seznam", component: WishList },
+    { path: '/muj_seznam', name: "můj seznam", component: WishPage },
   ],
 });
 

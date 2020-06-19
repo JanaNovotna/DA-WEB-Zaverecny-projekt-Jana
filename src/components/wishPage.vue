@@ -6,7 +6,7 @@
 
     <wishList />
     <div class="container_button">
-      <button>Tady je odkaz pro sdílení</button>
+      <button @click="getURL">Tady je odkaz pro sdílení</button>
     </div>
   </div>
 </template>
@@ -18,6 +18,13 @@ export default {
 
   components: {
     wishList: WishList
+  },
+
+  methods: {
+    getURL() {
+      let URL = window.location.href;
+      console.log(URL);
+    }
   }
 };
 </script>

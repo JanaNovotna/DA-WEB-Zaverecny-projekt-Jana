@@ -9,21 +9,17 @@
       </p>
     </div>
     <div class="container_button">
-      <book />
+      <myButton />
     </div>
   </div>
 </template>
 <script>
-import BookButton from "./BookButton.vue";
-import DeleteButton from "./DeleteButton.vue";
-import ReleaseButton from "./ReleaseButton.vue";
+import Button from "./Button.vue";
 
 export default {
   name: "Wish",
   components: {
-    book: BookButton,
-    delete: DeleteButton,
-    release: ReleaseButton
+    myButton: Button
   },
   props: ["title", "description", "link"]
 };

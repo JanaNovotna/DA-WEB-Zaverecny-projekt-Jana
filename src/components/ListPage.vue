@@ -6,7 +6,7 @@
 </template>
 <script>
 import Menu from "./Menu.vue";
-import WishForm from "./WishFormPage.vue";
+import WishForm from "./WishForm.vue";
 export default {
   name: "ListPage",
   components: {
