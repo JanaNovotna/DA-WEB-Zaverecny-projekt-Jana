@@ -19,9 +19,9 @@ import Button from "./Button.vue";
 export default {
   name: "Wish",
   components: {
-    myButton: Button,
+    myButton: Button
   },
-  props: ["title", "description", "link"],
+  props: ["title", "description", "link"]
 };
 </script>
 <style scoped>

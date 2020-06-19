@@ -6,7 +6,9 @@
         v-bind:title="wish.title"
         v-bind:description="wish.description"
         v-bind:link="wish.link"
-        v-bind:key="index"
+        v-bind:idx="index"
+        v-bind:key="wish.title"
+        v-on:push="addWish($event)"
       />
     </div>
   </div>
@@ -23,27 +25,37 @@ export default {
         {
           title: "Lízátko",
           description: "Velké, červeno-bílé, sladké.",
-          link: "https://static.glami.cz/img/520x520bt/212315474.jpg",
+          link: "https://static.glami.cz/img/520x520bt/212315474.jpg"
         },
         {
           title: "Omalovánky",
           description: "Včetně pastelek.",
           link:
-            "https://www.detskyusmev.eu/fotky79138/fotos/_vyrn_3864b96536124.jpg",
+            "https://www.detskyusmev.eu/fotky79138/fotos/_vyrn_3864b96536124.jpg"
         },
         {
           title: "Autíčko na dálkové ovládání",
           description: "Hasiči nebo policajti.",
-          link: "https://cdn.alza.cz/ImgW.ashx?fd=f3&cd=HRAif10801",
-        },
-      ],
+          link: "https://cdn.alza.cz/ImgW.ashx?fd=f3&cd=HRAif10801"
+        }
+      ]
     };
+  },
+
+  methods: {
+    addWish() {
+      this.wishes.push({
+        title: "Autíčko na dálkové ovládání",
+        description: "Hasiči nebo policajti.",
+        link: "https://cdn.alza.cz/ImgW.ashx?fd=f3&cd=HRAif10801"
+      });
+    }
   },
 
   components: {
     wish: Wish,
-    logo: Logo,
-  },
+    logo: Logo
+  }
 };
 </script>
 <style scoped>
