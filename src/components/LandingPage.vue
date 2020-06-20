@@ -30,6 +30,8 @@
     <wishPage />
   </div>
 </template>
+
+
 <script>
 import Logo from "./Logo1.vue";
 import WishPage from "./wishPage.vue";
