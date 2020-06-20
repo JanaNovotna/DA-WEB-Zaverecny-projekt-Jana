@@ -21,6 +21,7 @@
       </button>
     </div>
     <div class="url"></div>
+    {{ userID }}
   </div>
 </template>
 <script>
@@ -51,7 +52,7 @@ export default {
         },
       ],
       isModalOpen: false,
-      // userID:this.$route.params.id,
+      userID: this.$route.params.id,
     };
   },
 

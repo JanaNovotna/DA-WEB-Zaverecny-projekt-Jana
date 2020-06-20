@@ -21,27 +21,32 @@
         <div class="description">
           <img src="assets/img/present.png" alt="Dárek" class="icon" />
           <p>Těšte se na to, co dostane za dárky!</p>
-          <img src="assets/img/openedGift.png" alt="Otevřený dárek" class="des_icon" />
+          <img
+            src="assets/img/openedGift.png"
+            alt="Otevřený dárek"
+            class="des_icon"
+          />
         </div>
       </div>
-      <router-link class="main__button" to="/seznam_prani">Zadat nové přání</router-link>
+      <router-link class="main__button" to="/seznam_prani"
+        >Zadat nové přání</router-link
+      >
     </div>
 
     <wishPage />
   </div>
 </template>
 
-
 <script>
 import Logo from "./Logo1.vue";
-import WishPage from "./wishPage.vue";
+import WishPage from "./WishPage.vue";
 
 export default {
   name: "LandingPage",
   components: {
     ourLogo: Logo,
-    wishPage: WishPage
-  }
+    wishPage: WishPage,
+  },
 };
 </script>
 <style scoped>
