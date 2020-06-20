@@ -28,22 +28,30 @@
           <p>Těšte se na to, co dostane za dárky!</p>
         </div>
       </div>
-      <router-link
-        class="main__button add__button"
-        to="/muj_seznam/cwYzBFH0XQ6PQ2fym8pk"
-        >Zadat nové přání</router-link
-      >
+      <button @click="addList" class="main__button add__button">
+        Vytvořit nový seznam přání
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 import Logo from "./Logo1.vue";
+import db from "../db";
+import firebase from "firebase/app";
 
 export default {
   name: "LandingPage",
   components: {
     ourLogo: Logo,
+  },
+  methods: {
+    async addList() {
+      const newList = await db.collection("wishlists").add({ wishes: [] });
+      const newListId = (await newList.get()).id;
+      console.log(newListId);
+      this.$router.push({ name: "mujSeznam", params: { id: newListId } });
+    },
   },
 };
 </script>
