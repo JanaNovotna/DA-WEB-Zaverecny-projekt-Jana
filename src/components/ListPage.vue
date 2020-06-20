@@ -1,39 +1,38 @@
 <template>
   <div>
-    <ourMenu />
-    <!-- <div v-if="isModalOpen" class="modal">
-      <wishForm />
-    </div> -->
+    <h2>Seznam přání</h2>
+    <wishList
+      v-bind:wishes="wishlist.wishes"
+      v-bind:wishlistID="wishlistID"
+      v-bind:userType="'donor'"
+    />
   </div>
 </template>
 <script>
-import Menu from "./Menu.vue";
-import WishForm from "./WishForm.vue";
+import WishList from "./WishList.vue";
+import db from "../db";
+import firebase from "firebase/app";
+
 export default {
   name: "ListPage",
   components: {
-    ourMenu: Menu,
-    wishForm: WishForm,
+    wishList: WishList,
   },
-  // data() {
-  //   return {
-  //     isModalOpen: false,
-  //   };
-  // },
-  methods: {
-    show() {
-      this.$modal.show("newWish");
-    },
-    hide() {
-      this.$modal.hide("newWish");
-    },
+  data() {
+    return {
+      wishlist: { wishes: [] },
+      wishlistID: this.$route.params.id,
+    };
+  },
+  firestore() {
+    return {
+      wishlist: db.collection("wishlists").doc(this.wishlistID),
+    };
   },
 };
 </script>
 <style scoped>
-.modal {
-  position: absolute;
-  left: auto;
-  right: auto;
+h2 {
+  text-align: center;
 }
 </style>

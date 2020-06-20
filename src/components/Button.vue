@@ -38,18 +38,16 @@
 export default {
   name: "BookButton",
 
+  props: ["taken", "myList", "anotherUser"],
+
   data() {
     return {
-      taken: false,
-      myList: true,
-      anotherUser: false,
       disabled: false,
     };
   },
 
   methods: {
     changeTaken() {
-      this.taken = !this.taken;
       this.$emit("changeTaken");
     },
     message() {
