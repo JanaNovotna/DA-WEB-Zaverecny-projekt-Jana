@@ -9,19 +9,36 @@
       </p>
     </div>
     <div class="container_button">
-      <myButton />
+      <myButton
+        v-on:changeTaken="changeTaken()"
+        v-on:deleteWish="deleteWish()"
+      />
     </div>
   </div>
 </template>
 <script>
 import Button from "./Button.vue";
+import db from "../db";
+import firebase from "firebase/app";
 
 export default {
   name: "Wish",
   components: {
     myButton: Button,
   },
-  props: ["wish"],
+  props: ["wish", "wishlistID"],
+
+  methods: {
+    changeTaken() {},
+    async deleteWish() {
+      const wish = db.collection("wishes").doc(this.wish.id);
+      await wish.delete();
+      const wishlist = db.collection("wishlists").doc(this.wishlistID);
+      await wishlist.update({
+        wishes: firebase.firestore.FieldValue.arrayRemove(wish),
+      });
+    },
+  },
 };
 </script>
 <style scoped>

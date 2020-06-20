@@ -17,7 +17,11 @@
     <div class="main__button" v-if="myList === false && anotherUser === true">
       Není k dispozici
     </div>
-    <button class="main__button" v-if="myList === true && taken === false">
+    <button
+      class="main__button"
+      v-if="myList === true && taken === false"
+      @click="deleteWish"
+    >
       Smazat přání
     </button>
     <button
@@ -36,7 +40,7 @@ export default {
 
   data() {
     return {
-      taken: true,
+      taken: false,
       myList: true,
       anotherUser: false,
       disabled: false,
@@ -46,10 +50,14 @@ export default {
   methods: {
     changeTaken() {
       this.taken = !this.taken;
+      this.$emit("changeTaken");
     },
     message() {
       this.disabled = true;
       window.confirm("Toto přání už nejde smazat.");
+    },
+    deleteWish() {
+      this.$emit("deleteWish");
     },
   },
 };
