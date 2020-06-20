@@ -2,6 +2,9 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VModal from 'vue-js-modal';
 import Clipboard from 'v-clipboard';
+
+import { firestorePlugin } from 'vuefire'
+
 import App from './App.vue';
 import LandingPage from './components/LandingPage.vue';
 import ListPage from './components/ListPage.vue'
@@ -11,6 +14,7 @@ import './index.html';
 Vue.use(VueRouter);
 Vue.use(VModal);
 Vue.use(Clipboard);
+Vue.use(firestorePlugin)
 
 const myRouter = new VueRouter({
   mode: 'history',
