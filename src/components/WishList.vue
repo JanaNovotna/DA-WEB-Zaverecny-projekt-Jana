@@ -6,6 +6,7 @@
         v-bind:wish="wish"
         v-bind:key="index"
         v-bind:wishlistID="wishlistID"
+        v-bind:userType="userType"
       />
     </div>
   </div>
