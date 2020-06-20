@@ -24,7 +24,7 @@
           <img src="assets/img/openedGift.png" alt="Otevřený dárek" class="des_icon" />
         </div>
       </div>
-      <router-link class="main__button" to="/muj_seznam">Zadat nové přání</router-link>
+      <router-link class="main__button" to="/muj_seznam/cwYzBFH0XQ6PQ2fym8pk">Zadat nové přání</router-link>
     </div>
 
     <wishPage />
