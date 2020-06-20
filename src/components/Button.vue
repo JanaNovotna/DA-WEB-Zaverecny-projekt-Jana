@@ -1,10 +1,33 @@
 <template>
   <div>
-    <button class="main__button" v-if="taken === false" @click="changeTaken">
+    <button
+      class="main__button"
+      v-if="taken === false && myList === false"
+      @click="changeTaken"
+    >
       Zamluv si mě
     </button>
-    <button class="main__button" v-else @click="changeTaken">Zamluveno</button>
-    <button class="main__button" v-if="myList === true">Smazat přání</button>
+    <button
+      class="main__button"
+      v-else-if="taken === true && myList === false"
+      @click="changeTaken"
+    >
+      Zamluveno
+    </button>
+    <div class="main__button" v-if="myList === false && anotherUser === true">
+      Není k dispozici
+    </div>
+    <button class="main__button" v-if="myList === true && taken === false">
+      Smazat přání
+    </button>
+    <button
+      class="main__button"
+      v-if="myList === true && taken === true"
+      :disabled="false"
+      @click="message"
+    >
+      Smazat přání
+    </button>
   </div>
 </template>
 <script>
@@ -13,14 +36,20 @@ export default {
 
   data() {
     return {
-      taken: false,
-      myList: false,
+      taken: true,
+      myList: true,
+      anotherUser: false,
+      disabled: false,
     };
   },
 
   methods: {
     changeTaken() {
       this.taken = !this.taken;
+    },
+    message() {
+      this.disabled = true;
+      window.confirm("Toto přání už nejde smazat.");
     },
   },
 };
