@@ -5,7 +5,7 @@
     </div>
 
     <div v-if="isModalOpen" class="modal">
-      <wishForm v-on:push="addWish($event)" />
+      <wishForm v-on:push="addWish($event)" @hide="hide" />
       <button @click="hide" class="main__button hide__btn">X</button>
     </div>
 
@@ -72,9 +72,8 @@ export default {
 
     addWish(value) {
       this.wishes.push(value);
-    },
-  },
-
+    }
+  }
 };
 </script>
 <style scoped>
