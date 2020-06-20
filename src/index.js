@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import VModal from 'vue-js-modal'
+import VModal from 'vue-js-modal';
+import Clipboard from 'v-clipboard';
 import App from './App.vue';
 import LandingPage from './components/LandingPage.vue';
 import ListPage from './components/ListPage.vue'
@@ -8,7 +9,8 @@ import WishPage from "./components/WishPage.vue";
 import './index.html';
 
 Vue.use(VueRouter);
-Vue.use(VModal)
+Vue.use(VModal);
+Vue.use(Clipboard);
 
 const myRouter = new VueRouter({
   mode: 'history',
@@ -23,4 +25,5 @@ new Vue({
   el: '#app',
   router: myRouter,
   render: h => h(App),
+
 });

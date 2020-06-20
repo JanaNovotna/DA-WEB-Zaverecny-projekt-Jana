@@ -16,9 +16,11 @@
     </div>
 
     <div class="container_button">
-      <button class="main__button" @click="getURL">Tady je odkaz pro sdílení</button>
-      <div class="url"></div>
+      <button class="main__button" @click="getURL">
+        Tady je odkaz pro sdílení
+      </button>
     </div>
+    <div class="url"></div>
   </div>
 </template>
 <script>
@@ -34,34 +36,35 @@ export default {
         {
           title: "Lízátko",
           description: "Velké, červeno-bílé, sladké.",
-          link: "https://static.glami.cz/img/520x520bt/212315474.jpg"
+          link: "https://static.glami.cz/img/520x520bt/212315474.jpg",
         },
         {
           title: "Omalovánky",
           description: "Včetně pastelek.",
           link:
-            "https://www.detskyusmev.eu/fotky79138/fotos/_vyrn_3864b96536124.jpg"
+            "https://www.detskyusmev.eu/fotky79138/fotos/_vyrn_3864b96536124.jpg",
         },
         {
           title: "Autíčko na dálkové ovládání",
           description: "Hasiči nebo policajti.",
-          link: "https://cdn.alza.cz/ImgW.ashx?fd=f3&cd=HRAif10801"
-        }
+          link: "https://cdn.alza.cz/ImgW.ashx?fd=f3&cd=HRAif10801",
+        },
       ],
-      isModalOpen: false
+      isModalOpen: false,
     };
   },
 
   components: {
     wishList: WishList,
-    wishForm: WishForm
+    wishForm: WishForm,
   },
 
   methods: {
     getURL() {
       let URL = window.location.href;
-      document.querySelector(".url").textContent = `${URL}`;
-      console.log(URL);
+      document.querySelector(".url").textContent = URL;
+      this.$clipboard(URL);
+      alert("Zkopírováno: " + URL);
     },
     show() {
       this.isModalOpen = true;
@@ -72,8 +75,6 @@ export default {
 
     addWish(value) {
       this.wishes.push(value);
-    }
-  }
 };
 </script>
 <style scoped>
@@ -117,5 +118,9 @@ button {
 
 .url {
   background-color: #2c7873;
+  width: 50%;
+  padding: 2rem;
+  margin: 0 auto;
+  text-align: center;
 }
 </style>
