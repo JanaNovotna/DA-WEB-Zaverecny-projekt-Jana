@@ -21,6 +21,7 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "v-clipboard": "^2.2.3",
     "vue": "^2.6.10",
     "vue-js-modal": "^2.0.0-rc.3",
     "vue-router": "^3.3.4",
