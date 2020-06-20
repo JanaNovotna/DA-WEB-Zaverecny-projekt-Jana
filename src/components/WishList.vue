@@ -5,6 +5,7 @@
         v-for="(wish, index) in wishes"
         v-bind:wish="wish"
         v-bind:key="index"
+        v-bind:wishlistID="wishlistID"
       />
     </div>
   </div>
@@ -16,7 +17,7 @@ import Logo from "./Logo1.vue";
 export default {
   name: "WishList",
 
-  props: ["wishes"],
+  props: ["wishes", "wishlistID"],
 
   components: {
     wish: Wish,

@@ -9,7 +9,7 @@
       <button @click="hide" class="main__button hide__btn">X</button>
     </div>
 
-    <wishList v-bind:wishes="wishes" />
+    <wishList v-bind:wishes="wishlist.wishes" v-bind:wishlistID="wishlistID" />
 
     <div class="container_button">
       <button @click="show" class="main__button">Vložit přání</button>
@@ -21,35 +21,30 @@
       </button>
     </div>
     <div class="url"></div>
-    {{ userID }}
   </div>
 </template>
 <script>
 import WishList from "./WishList.vue";
 import WishForm from "./WishForm.vue";
 import db from "../db";
+import firebase from "firebase/app";
 
 export default {
   name: "WishPage",
 
   data() {
     return {
-      wishes: [],
+      wishlist: { wishes: [] },
       isModalOpen: false,
-      userID: this.$route.params.id,
+      wishlistID: this.$route.params.id,
     };
   },
 
-  firestore: {
-    wishes: db.collection("wishes"),
+  firestore() {
+    return {
+      wishlist: db.collection("wishlists").doc(this.wishlistID),
+    };
   },
-
-  //   coumpouted:{
-  // list() {
-  //   return neco.neco.find (
-  //   list => list.id === this.userID) cesta ke správnému seznamu podle id?
-  // }
-  //   }
 
   components: {
     wishList: WishList,
@@ -70,8 +65,12 @@ export default {
       this.isModalOpen = false;
     },
 
-    addWish(value) {
-      this.wishes.push(value);
+    async addWish(value) {
+      const newId = await db.collection("wishes").add(value);
+      const wishlist = db.collection("wishlists").doc(this.wishlistID);
+      await wishlist.update({
+        wishes: firebase.firestore.FieldValue.arrayUnion(newId),
+      });
     },
   },
 };
