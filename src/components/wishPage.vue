@@ -75,8 +75,11 @@ export default {
 
     addWish(value) {
       this.wishes.push(value);
+    },
+  },
 };
 </script>
+
 <style scoped>
 .modal {
   width: 100vw;
