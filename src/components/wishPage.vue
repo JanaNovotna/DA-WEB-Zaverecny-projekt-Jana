@@ -9,7 +9,10 @@
       <button @click="hide" class="main__button hide__btn">X</button>
     </div>
 
+    <div v-if="wishlist.wishes.length === 0">Váš seznam je prázdný</div>
+
     <wishList
+      v-if="wishlist.wishes.length > 0"
       v-bind:wishes="wishlist.wishes"
       v-bind:wishlistID="wishlistID"
       v-bind:userType="'owner'"
