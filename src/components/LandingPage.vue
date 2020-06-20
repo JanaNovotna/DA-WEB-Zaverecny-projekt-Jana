@@ -28,7 +28,7 @@
           />
         </div>
       </div>
-      <router-link class="main__button" to="/seznam_prani"
+      <router-link class="main__button" to="/muj_seznam/cwYzBFH0XQ6PQ2fym8pk"
         >Zadat nové přání</router-link
       >
     </div>
