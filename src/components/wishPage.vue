@@ -51,8 +51,16 @@ export default {
         },
       ],
       isModalOpen: false,
+      // userID:this.$route.params.id,
     };
   },
+
+  //   coumpouted:{
+  // list() {
+  //   return neco.neco.find (
+  //   list => list.id === this.userID) cesta ke správnému seznamu podle id?
+  // }
+  //   }
 
   components: {
     wishList: WishList,
