@@ -64,7 +64,7 @@ export default {
       let URL = window.location.href;
       document.querySelector(".url").textContent = URL;
       this.$clipboard(URL);
-      alert("Zkopírováno: " + URL);
+      window.confirm("Zkopírováno: " + URL);
     },
     show() {
       this.isModalOpen = true;
