@@ -17,7 +17,7 @@ import Logo from "./Logo1.vue";
 export default {
   name: "WishList",
 
-  props: ["wishes", "wishlistID"],
+  props: ["wishes", "wishlistID", "userType"],
 
   components: {
     wish: Wish,

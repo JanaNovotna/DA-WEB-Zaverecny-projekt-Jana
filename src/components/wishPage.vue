@@ -9,7 +9,11 @@
       <button @click="hide" class="main__button hide__btn">X</button>
     </div>
 
-    <wishList v-bind:wishes="wishlist.wishes" v-bind:wishlistID="wishlistID" />
+    <wishList
+      v-bind:wishes="wishlist.wishes"
+      v-bind:wishlistID="wishlistID"
+      v-bind:userType="'owner'"
+    />
 
     <div class="container_button">
       <button @click="show" class="main__button">Vložit přání</button>
@@ -66,7 +70,9 @@ export default {
     },
 
     async addWish(value) {
-      const newId = await db.collection("wishes").add(value);
+      const newId = await db
+        .collection("wishes")
+        .add({ ...value, taken: false });
       const wishlist = db.collection("wishlists").doc(this.wishlistID);
       await wishlist.update({
         wishes: firebase.firestore.FieldValue.arrayUnion(newId),

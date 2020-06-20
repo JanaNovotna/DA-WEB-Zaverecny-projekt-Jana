@@ -1,10 +1,11 @@
 <template>
   <div class="container">
-    <ourLogo />
-
     <div class="hlavni__obsah">
-      <h1 class="hidden">Dárky bez starostí</h1>
-      <p class="claim">Stránky, které vám pomohou se starostmi s dárky.</p>
+      <div class="header">
+        <ourLogo />
+        <h1 class="hidden">Dárky bez starostí</h1>
+        <p class="claim">Stránky, které vám pomohou se starostmi s dárky.</p>
+      </div>
       <h2>Jak to funguje?</h2>
       <div class="how_it_works">
         <div class="description">
@@ -47,8 +48,8 @@ export default {
 };
 </script>
 <style scoped>
-.container {
-  padding-top: 5vh;
+.header {
+  background-color: #042f30;
 }
 .hlavni__obsah {
   margin-top: 5vh;
