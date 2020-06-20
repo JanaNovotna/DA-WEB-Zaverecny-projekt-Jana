@@ -16,8 +16,8 @@ const myRouter = new VueRouter({
   mode: 'history',
   routes: [
     { path: '/', name: "home", component: LandingPage },
-    { path: '/seznam_prani', name: "seznam přání", component: ListPage },
-    { path: '/muj_seznam', name: "můj seznam", component: WishPage },
+    { path: '/muj_seznam/:id', name: "můj seznam", component: WishPage }, // owner
+    { path: '/seznam_prani/:id', name: "seznam přání", component: ListPage }, // donor 
   ],
 });
 
