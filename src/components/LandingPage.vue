@@ -61,7 +61,7 @@ p {
   background: url("../assets/img/newDesign.jpg");
   background-position: center center;
   background-size: cover;
-  width: 100vw;
+  width: 100%;
   height: 98vh;
   display: flex;
   justify-content: center;
@@ -69,7 +69,7 @@ p {
 }
 
 .claim {
-  font-size: 3rem;
+  font-size: 3.5rem;
   line-height: 4rem;
   font-weight: 600;
   color: #fff;
