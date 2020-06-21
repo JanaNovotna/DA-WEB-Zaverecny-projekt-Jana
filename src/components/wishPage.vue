@@ -30,7 +30,6 @@
       </button>
     </div>
     <div class="url">{{ newURL }}</div>
-    {{ wishlist.userID }}
   </div>
 </template>
 <script>
