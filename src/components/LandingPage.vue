@@ -18,9 +18,7 @@
 
       <div v-for="(wishlist, index) in wishlists" v-bind:key="index">
         Seznam {{ wishlist.list_name }}
-        <router-link :to="{ path: `/muj_seznam/${wishlist.id}` }"
-          >EDITOVAT</router-link
-        >
+        <router-link :to="{ path: `/muj_seznam/${wishlist.id}` }">EDITOVAT</router-link>
       </div>
     </div>
 
@@ -37,23 +35,18 @@
           <img src="../assets/img/letter.png" alt="Obálka" class="des_icon" />
           <p>
             Pošlete seznam svým přátelům.
-            <br />Přátele si na seznamu mohou zamluvit dárek, <br />který vám
+            <br />Přátele si na seznamu mohou zamluvit dárek,
+            <br />který vám
             chtějí pořídit.
           </p>
         </div>
         <div class="description">
-          <img
-            src="../assets/img/gift.png"
-            alt="Otevřený dárek"
-            class="des_icon"
-          />
+          <img src="../assets/img/gift.png" alt="Otevřený dárek" class="des_icon" />
           <p>Těšte se na to, co dostane za dárky!</p>
         </div>
       </div>
     </div>
-    <button @click="isModalOpen = true" class="main__button add__button">
-      Vytvořit nový seznam přání
-    </button>
+    <button @click="isModalOpen = true" class="main__button add__button">Vytvořit nový seznam přání</button>
   </div>
 </template>
 
@@ -66,7 +59,7 @@ export default {
   name: "LandingPage",
 
   components: {
-    listName: ListName,
+    listName: ListName
   },
 
   data() {
@@ -74,7 +67,7 @@ export default {
       currentUserID: localStorage.userID,
       wishlists: [],
       isModalOpen: false,
-      newListID: "",
+      newListID: ""
     };
   },
 
@@ -91,16 +84,16 @@ export default {
 
     hide() {
       this.isModalOpen = false;
-    },
+    }
   },
 
   firestore() {
     return {
       wishlists: db
         .collection("wishlists")
-        .where("userID", "==", localStorage.userID),
+        .where("userID", "==", localStorage.userID)
     };
-  },
+  }
 };
 </script>
 <style scoped>
@@ -177,7 +170,7 @@ h2 {
   font-size: 1.2rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .how_it_works {
     flex-direction: row;
   }
