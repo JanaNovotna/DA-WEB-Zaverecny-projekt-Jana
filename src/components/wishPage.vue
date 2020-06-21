@@ -27,7 +27,7 @@
         Tady je odkaz pro sdílení
       </button>
     </div>
-    <div class="url"></div>
+    <div class="url">{{ newURL }}</div>
   </div>
 </template>
 <script>
@@ -47,6 +47,12 @@ export default {
     };
   },
 
+  computed: {
+    newURL() {
+      return window.location.origin + "/seznam_prani/" + this.wishlistID;
+    },
+  },
+
   firestore() {
     return {
       wishlist: db.collection("wishlists").doc(this.wishlistID),
@@ -61,9 +67,9 @@ export default {
   methods: {
     getURL() {
       let URL = window.location.href;
-      document.querySelector(".url").textContent = URL;
-      this.$clipboard(URL);
-      window.confirm("Zkopírováno: " + URL);
+      // document.querySelector(".url").textContent = URL;
+      this.$clipboard(this.newURL);
+      alert("Zkopírováno: " + this.newURL);
     },
     show() {
       this.isModalOpen = true;
