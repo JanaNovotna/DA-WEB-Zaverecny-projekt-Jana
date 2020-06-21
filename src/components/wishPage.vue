@@ -22,10 +22,10 @@
       <button @click="show" class="main__button">Vložit přání</button>
     </div>
 
-    <div class="container_button">
-      <button class="main__button" @click="getURL">Tady je odkaz pro sdílení</button>
+    <div class="odkaz">
+      <div class="url">{{ newURL }}</div>
+      <button class="main__button small__button" @click="getURL">Sdílet</button>
     </div>
-    <div class="url">{{ newURL }}</div>
   </div>
 </template>
 <script>
@@ -138,11 +138,28 @@ button {
   text-align: center;
 }
 
+.odkaz {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+}
 .url {
-  background-color: #59cbbc;
-  width: 50%;
-  padding: 2rem;
-  margin: 0 auto;
   text-align: center;
+  margin: 0.75rem;
+}
+
+.small__button {
+  max-width: 10vw;
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .odkaz {
+    width: 80vw;
+    margin: 0 auto;
+  }
 }
 </style>

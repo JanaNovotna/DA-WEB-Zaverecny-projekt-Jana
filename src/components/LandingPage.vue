@@ -1,5 +1,5 @@
 <template>
-  <div class="hlavni__obsah">
+  <div>
     <div class="header">
       <h1 class="hidden">Dárky bez starostí</h1>
       <p class="claim">Sdílejte svá přání s rodinou a přáteli.</p>
@@ -17,25 +17,29 @@
       </div>
     </div>
 
-    <div v-else class="how_it_works">
-      <h2>Jak to funguje?</h2>
-      <div class="description">
-        <img src="../assets/img/list.png" alt="Seznam" class="des_icon" />
-        <p>Vytvořte si seznam dárků.</p>
+    <div v-else class="hlavni__obsah">
+      <div class="nadpis">
+        <h2>Jak to funguje?</h2>
       </div>
-      <div class="description">
-        <img src="../assets/img/letter.png" alt="Obálka" class="des_icon" />
-        <p>
-          Pošlete seznam svým přátelům.
-          <br />Přátele si na seznamu zamluví dárek, který vám chtějí pořídit.
-        </p>
-      </div>
-      <div class="description">
-        <img src="../assets/img/gift.png" alt="Otevřený dárek" class="des_icon" />
-        <p>Těšte se na to, co dostane za dárky!</p>
+      <div class="how_it_works">
+        <div class="description">
+          <img src="../assets/img/list.png" alt="Seznam" class="des_icon" />
+          <p>Vytvořte si seznam dárků.</p>
+        </div>
+        <div class="description">
+          <img src="../assets/img/letter.png" alt="Obálka" class="des_icon" />
+          <p>
+            Pošlete seznam svým přátelům.
+            <br />Přátele si na seznamu mohou zamluvit dárek,
+            <br />který vám chtějí pořídit.
+          </p>
+        </div>
+        <div class="description">
+          <img src="../assets/img/gift.png" alt="Otevřený dárek" class="des_icon" />
+          <p>Těšte se na to, co dostane za dárky!</p>
+        </div>
       </div>
     </div>
-
     <button @click="isModalOpen = true" class="main__button add__button">Vytvořit nový seznam přání</button>
   </div>
 </template>
@@ -92,6 +96,10 @@ p {
   line-height: 1.3rem;
 }
 
+.hidden {
+  display: none;
+}
+
 .header {
   background: url("../assets/img/newDesign.jpg");
   background-position: center center;
@@ -111,8 +119,34 @@ p {
   margin: 1rem;
 }
 
+.hlavni__obsah {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 h2 {
-  margin: 5vh 0;
+  margin: 3rem 0 0 0;
+  text-align: center;
+}
+.how_it_works {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 1rem;
+}
+
+.des_icon {
+  width: 4rem;
+  margin: 1rem auto;
 }
 
 .modal {
@@ -125,8 +159,22 @@ h2 {
 }
 
 .add__button {
-  margin: 5vh 0;
+  margin: 5vh auto;
   width: 20rem;
   font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .how_it_works {
+    flex-direction: row;
+  }
+  .description {
+    width: 33.33%;
+    border-bottom: none;
+    margin: 1rem;
+  }
+  .add__button {
+    max-width: 25vw;
+  }
 }
 </style>
