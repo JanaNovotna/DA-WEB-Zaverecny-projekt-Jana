@@ -8,8 +8,8 @@ import LandingPage from "./components/LandingPage.vue";
 export default {
   name: "App",
   components: {
-    landingPage: LandingPage,
-  },
+    landingPage: LandingPage
+  }
 };
 </script>
 
@@ -27,14 +27,10 @@ body {
   margin: 0;
   padding: 0;
 }
-.hlavni__obsah {
-  display: flex;
-  justify-content: center;
-}
 
 h1 {
   text-align: center;
-  color: #59cbbc;
+  color: #fff;
 }
 
 h2 {
@@ -59,6 +55,7 @@ h3 {
 .hlavni__obsah {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 .how_it_works {

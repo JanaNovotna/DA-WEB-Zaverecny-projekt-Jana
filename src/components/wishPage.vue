@@ -1,5 +1,5 @@
 <template>
-  <div class="wishpage">
+  <div>
     <div class="container_title">
       <h1>Seznam mých přání</h1>
     </div>
@@ -9,9 +9,7 @@
       <button @click="hide" class="main__button hide__btn">X</button>
     </div>
 
-    <div v-if="wishlist.wishes.length === 0" class="empty__list">
-      Váš seznam je zatím prázdný
-    </div>
+    <div v-if="wishlist.wishes.length === 0" class="empty__list">Váš seznam je zatím prázdný</div>
 
     <wishList
       v-if="wishlist.wishes.length > 0"
@@ -25,9 +23,7 @@
     </div>
 
     <div class="container_button">
-      <button class="main__button" @click="getURL">
-        Tady je odkaz pro sdílení
-      </button>
+      <button class="main__button" @click="getURL">Tady je odkaz pro sdílení</button>
     </div>
     <div class="url">{{ newURL }}</div>
   </div>
@@ -45,25 +41,25 @@ export default {
     return {
       wishlist: { wishes: [], userID: "" },
       isModalOpen: false,
-      wishlistID: this.$route.params.id,
+      wishlistID: this.$route.params.id
     };
   },
 
   computed: {
     newURL() {
       return window.location.origin + "/seznam_prani/" + this.wishlistID;
-    },
+    }
   },
 
   firestore() {
     return {
-      wishlist: db.collection("wishlists").doc(this.wishlistID),
+      wishlist: db.collection("wishlists").doc(this.wishlistID)
     };
   },
 
   components: {
     wishList: WishList,
-    wishForm: WishForm,
+    wishForm: WishForm
   },
 
   methods: {
@@ -86,10 +82,10 @@ export default {
         .add({ ...value, takenBy: null });
       const wishlist = db.collection("wishlists").doc(this.wishlistID);
       await wishlist.update({
-        wishes: firebase.firestore.FieldValue.arrayUnion(newId),
+        wishes: firebase.firestore.FieldValue.arrayUnion(newId)
       });
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -102,19 +98,23 @@ export default {
   left: 0;
   top: 0;
 }
-
+/* 
 .wishpage {
   margin: 10vh 0;
   padding: 0 5vw;
+} */
+.container_title {
+  background: url("../assets/img/banner.jpg");
+  background-position: center center;
+  background-size: cover;
+  height: 15vh;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 .container_title,
 .container_button {
   text-align: center;
-}
-
-h2 {
-  font-size: 1.8rem;
 }
 
 .empty__list {
