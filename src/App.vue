@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "App",
+  name: "App"
 };
 </script>
 
@@ -18,9 +18,6 @@ html {
   font-family: "Raleway", sans-serif;
   background-color: #f2f8f8;
   color: #000;
-}
-body {
-  padding: 0;
 }
 
 h1 {
