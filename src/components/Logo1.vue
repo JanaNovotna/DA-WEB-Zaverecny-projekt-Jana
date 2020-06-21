@@ -1,7 +1,5 @@
 <template>
-  <router-link to="/">
-    <img src="../assets/img/logoFinal.png" alt="Logo 4U" />
-  </router-link>
+  <router-link to="/"> </router-link>
 </template>
 <script>
 export default {
