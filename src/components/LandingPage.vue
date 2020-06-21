@@ -5,10 +5,15 @@
       <p class="claim">Sdílejte svá přání s rodinou a přáteli.</p>
     </div>
 
+    <div v-if="isModalOpen" class="modal">
+      <listName v-on:push="addList($event)" @hide="hide" />
+      <button @click="hide" class="main__button hide__btn">X</button>
+    </div>
+
     <div v-if="wishlists.length > 0 ">
       <div v-for="(wishlist, index) in wishlists" v-bind:key="index">
-        Seznam
-        <router-link :to="{ path: `/muj_seznam/${wishlist.id}` }">ZDE</router-link>
+        Seznam {{wishlist.list_name}}
+        <router-link :to="{ path: `/muj_seznam/${wishlist.id}` }">EDITOVAT</router-link>
       </div>
     </div>
 
@@ -35,32 +40,44 @@
         </div>
       </div>
     </div>
-    <button @click="addList" class="main__button add__button">Vytvořit nový seznam přání</button>
+    <button @click="isModalOpen = true" class="main__button add__button">Vytvořit nový seznam přání</button>
   </div>
 </template>
 
 <script>
 import db from "../db";
 import firebase from "firebase/app";
+import ListName from "./ListNameForm.vue";
 
 export default {
   name: "LandingPage",
 
+  components: {
+    listName: ListName
+  },
+
   data() {
     return {
       currentUserID: localStorage.userID,
-      wishlists: []
+      wishlists: [],
+      isModalOpen: false,
+      newListID: ""
     };
   },
 
   methods: {
-    async addList() {
+    async addList(value) {
+      console.log("here");
       const newList = await db
         .collection("wishlists")
-        .add({ wishes: [], userID: localStorage.userID });
+        .add({ ...value, wishes: [], userID: localStorage.userID });
       const newListId = (await newList.get()).id;
-      console.log(newListId);
-      this.$router.push({ name: "mujSeznam", params: { id: newListId } });
+      this.newListID = newListId;
+      this.$router.push({ name: "mujSeznam", params: { id: this.newListID } });
+    },
+
+    hide() {
+      this.isModalOpen = false;
     }
   },
 
@@ -71,14 +88,6 @@ export default {
         .where("userID", "==", localStorage.userID)
     };
   }
-  /* 
-  async created() {
-    const data = await db
-      .collection("wishlists")
-      .where("userID", "==", "d8faea16-f6ce-430b-8839-8092c5fa3d03")
-      .get();
-    this.wishlistIds = data.docs.map((e) => e.data().id);
-  }, */
 };
 </script>
 <style scoped>
@@ -138,6 +147,15 @@ h2 {
 .des_icon {
   width: 4rem;
   margin: 1rem auto;
+}
+
+.modal {
+  width: 100vw;
+  height: 100wh;
+  background-color: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
 .add__button {
