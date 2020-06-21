@@ -8,8 +8,8 @@ import LandingPage from "./components/LandingPage.vue";
 export default {
   name: "App",
   components: {
-    landingPage: LandingPage,
-  },
+    landingPage: LandingPage
+  }
 };
 </script>
 
@@ -30,7 +30,7 @@ body {
 
 h1 {
   text-align: center;
-  color: #59cbbc;
+  color: #fff;
 }
 
 h2 {

@@ -23,8 +23,8 @@ export default {
 
   components: {
     wish: Wish,
-    logo: Logo,
-  },
+    logo: Logo
+  }
 };
 </script>
 <style scoped>
