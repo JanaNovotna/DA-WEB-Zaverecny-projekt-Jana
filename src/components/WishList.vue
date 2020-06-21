@@ -21,35 +21,35 @@ export default {
   props: ["wishes", "wishlistID", "userType"],
 
   components: {
-    wish: Wish,
-  },
+    wish: Wish
+  }
 };
 </script>
 <style scoped>
 .wishlist {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background-color: #dad8d8;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 10px;
-  margin: 0 2rem;
+
+  background-color: #f2f8f8;
+  margin: 2rem;
 }
 .wish {
-  max-width: 100%;
-  background-color: #dad8d8;
-  margin: 2rem;
+  width: 100%;
+  background-color: #f2f8f8;
+  margin: 1rem 0;
   border-radius: 10px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .wishlist {
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .wish {
-    width: 50%;
+    width: 40%;
+    margin: 1rem;
   }
 }
 </style>

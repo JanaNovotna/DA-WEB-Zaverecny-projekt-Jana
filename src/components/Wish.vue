@@ -57,13 +57,6 @@ export default {
 };
 </script>
 <style scoped>
-a {
-  text-decoration: none;
-  font-family: "Roboto Slab", serif;
-  font-size: 1rem;
-  color: #004445;
-}
-
 .wish {
   display: flex;
   flex-direction: column;
@@ -76,16 +69,17 @@ a {
 .container_button {
   display: flex;
   justify-content: right;
+  max-width: 15vw;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .wish {
     flex-direction: row;
-    margin: 5vh 0;
   }
 
   .container_button {
     align-items: flex-start;
+    max-width: 20vw;
   }
 }
 </style>

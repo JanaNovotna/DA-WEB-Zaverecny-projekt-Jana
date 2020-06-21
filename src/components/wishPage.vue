@@ -3,7 +3,9 @@
     <div class="container_title">
       <h1>Seznam mých přání</h1>
     </div>
-
+    <div>
+      <h2>{{wishlist.list_name}}</h2>
+    </div>
     <div v-if="isModalOpen" class="modal">
       <wishForm v-on:push="addWish($event)" @hide="hide" />
       <button @click="hide" class="main__button hide__btn">X</button>
@@ -156,7 +158,7 @@ button {
   margin: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .odkaz {
     width: 80vw;
     margin: 0 auto;

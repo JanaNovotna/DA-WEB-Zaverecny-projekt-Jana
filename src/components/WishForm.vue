@@ -10,9 +10,7 @@
       <textarea v-model="description" id="popis" cols="30" rows="10"></textarea>
       <label for="web_address">Odkaz:</label>
       <input type="url" v-model="link" id="web_address" />
-      <button v-on:click="addPresent" class="main__button add_btn">
-        Přidat dárek na seznam
-      </button>
+      <button v-on:click="addPresent" class="main__button add_btn">Přidat dárek na seznam</button>
     </div>
   </div>
 </template>
@@ -24,7 +22,7 @@ export default {
     return {
       title: "",
       description: "",
-      link: "",
+      link: ""
     };
   },
 
@@ -38,11 +36,11 @@ export default {
       this.$emit("push", {
         title: this.title,
         description: this.description,
-        link: this.link,
+        link: this.link
       });
       this.$emit("hide");
-    },
-  },
+    }
+  }
 };
 </script>
 <style scoped>
@@ -70,6 +68,7 @@ input,
 textarea {
   background-color: #d4d3d3;
   color: #000;
+  font-size: 1rem;
   margin: 0.75rem;
 }
 
