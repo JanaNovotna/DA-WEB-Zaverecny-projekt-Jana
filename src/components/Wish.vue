@@ -27,12 +27,12 @@ import firebase from "firebase/app";
 export default {
   name: "Wish",
   components: {
-    myButton: Button,
+    myButton: Button
   },
 
   data() {
     return {
-      currentUserID: localStorage.userID,
+      currentUserID: localStorage.userID
     };
   },
 
@@ -42,7 +42,7 @@ export default {
     async changeTaken() {
       const wish = db.collection("wishes").doc(this.wish.id);
       await wish.update({
-        takenBy: this.wish.takenBy === null ? localStorage.userID : null,
+        takenBy: this.wish.takenBy === null ? localStorage.userID : null
       });
     },
     async deleteWish() {
@@ -50,10 +50,10 @@ export default {
       await wish.delete();
       const wishlist = db.collection("wishlists").doc(this.wishlistID);
       await wishlist.update({
-        wishes: firebase.firestore.FieldValue.arrayRemove(wish),
+        wishes: firebase.firestore.FieldValue.arrayRemove(wish)
       });
-    },
-  },
+    }
+  }
 };
 </script>
 <style scoped>
@@ -78,7 +78,7 @@ a {
   justify-content: right;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .wish {
     flex-direction: row;
     margin: 5vh 0;

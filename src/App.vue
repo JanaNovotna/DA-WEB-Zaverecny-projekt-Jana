@@ -16,6 +16,7 @@ export default {
 <style>
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 html {
@@ -24,7 +25,6 @@ html {
   color: #000;
 }
 body {
-  margin: 0;
   padding: 0;
 }
 
@@ -40,48 +40,9 @@ h2 {
 h3 {
   color: #59cbbc;
   font-size: 1.5rem;
-  margin: 0;
-}
-
-.hidden {
-  display: none;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.hlavni__obsah {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.how_it_works {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.icon {
-  width: 2rem;
-  margin: 0 auto;
-}
-.des_icon {
-  width: 4rem;
-  margin: 0 auto;
-}
-
-.description {
-  display: flex;
-  flex-direction: column;
-  width: 90vw;
-  border-bottom: 1px solid #fff;
-  margin-bottom: 1rem;
 }
 
 .main__button {
-  font-family: "Roboto Slab", serif;
   text-decoration: none;
   text-align: center;
   font-size: 1.2rem;
@@ -97,24 +58,5 @@ h3 {
   color: #fff;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-
-@media (min-width: 768px) {
-  .how_it_works {
-    flex-direction: row;
-  }
-  .description {
-    width: 33.33%;
-    border-bottom: none;
-  }
-  .add__present {
-    max-width: 25vw;
-  }
-}
-
-@media (min-width: 1024px) {
-}
-
-@media (min-width: 1280px) {
 }
 </style>
