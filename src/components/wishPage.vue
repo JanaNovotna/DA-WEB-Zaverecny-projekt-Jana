@@ -1,5 +1,5 @@
 <template>
-  <div class="wishpage">
+  <div>
     <div class="container_title">
       <h1>Seznam mých přání</h1>
     </div>
@@ -102,19 +102,15 @@ export default {
   left: 0;
   top: 0;
 }
-
+/* 
 .wishpage {
   margin: 10vh 0;
   padding: 0 5vw;
-}
+} */
 
 .container_title,
 .container_button {
   text-align: center;
-}
-
-h2 {
-  font-size: 1.8rem;
 }
 
 .empty__list {

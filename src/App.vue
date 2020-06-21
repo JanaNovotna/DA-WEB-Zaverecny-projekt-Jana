@@ -27,10 +27,6 @@ body {
   margin: 0;
   padding: 0;
 }
-.hlavni__obsah {
-  display: flex;
-  justify-content: center;
-}
 
 h1 {
   text-align: center;
@@ -59,6 +55,7 @@ h3 {
 .hlavni__obsah {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 .how_it_works {
