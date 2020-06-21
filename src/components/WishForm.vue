@@ -10,23 +10,25 @@
       <textarea v-model="description" id="popis" cols="30" rows="10"></textarea>
       <label for="web_address">Odkaz:</label>
       <input type="url" v-model="link" id="web_address" />
-
-      <button v-on:click="addPresent" class="main__button add_btn">Přidat dárek na seznam</button>
+      <button v-on:click="addPresent" class="main__button add_btn">
+        Přidat dárek na seznam
+      </button>
     </div>
   </div>
 </template>
 <script>
 import Menu from "./Menu.vue";
+
 export default {
   name: "NewWish",
   components: {
-    ourMenu: Menu
+    ourMenu: Menu,
   },
   data() {
     return {
       title: "",
       description: "",
-      link: ""
+      link: "",
     };
   },
 
@@ -40,11 +42,11 @@ export default {
       this.$emit("push", {
         title: this.title,
         description: this.description,
-        link: this.link
+        link: this.link,
       });
       this.$emit("hide");
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>

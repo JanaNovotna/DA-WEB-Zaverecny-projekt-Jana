@@ -41,7 +41,9 @@ export default {
 
   methods: {
     async addList() {
-      const newList = await db.collection("wishlists").add({ wishes: [] });
+      const newList = await db
+        .collection("wishlists")
+        .add({ wishes: [], userID: localStorage.userID });
       const newListId = (await newList.get()).id;
       console.log(newListId);
       this.$router.push({ name: "mujSeznam", params: { id: newListId } });

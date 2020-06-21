@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VModal from 'vue-js-modal';
 import Clipboard from 'v-clipboard';
+import { v4 as uuidv4 } from 'uuid';
 
 import { firestorePlugin } from 'vuefire'
 
@@ -29,5 +30,9 @@ new Vue({
   el: '#app',
   router: myRouter,
   render: h => h(App),
-
+  mounted() {
+    if (!localStorage.userID) {
+      localStorage.userID = uuidv4();
+    }
+  },
 });
