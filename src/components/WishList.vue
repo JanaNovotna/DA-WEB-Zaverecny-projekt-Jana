@@ -14,7 +14,6 @@
 </template>
 <script>
 import Wish from "./Wish.vue";
-import Logo from "./Logo1.vue";
 
 export default {
   name: "WishList",
@@ -23,8 +22,7 @@ export default {
 
   components: {
     wish: Wish,
-    logo: Logo
-  }
+  },
 };
 </script>
 <style scoped>

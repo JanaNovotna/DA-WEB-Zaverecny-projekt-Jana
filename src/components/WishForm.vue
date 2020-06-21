@@ -17,13 +17,9 @@
   </div>
 </template>
 <script>
-import Menu from "./Menu.vue";
-
 export default {
   name: "NewWish",
-  components: {
-    ourMenu: Menu,
-  },
+
   data() {
     return {
       title: "",
