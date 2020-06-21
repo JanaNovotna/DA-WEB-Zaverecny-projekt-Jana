@@ -9,7 +9,7 @@ import { firestorePlugin } from 'vuefire'
 import App from './App.vue';
 import LandingPage from './components/LandingPage.vue';
 import ListPage from './components/ListPage.vue'
-import WishPage from "./components/WishPage.vue";
+import WishPage from "./components/wishPage.vue";
 import './index.html';
 
 Vue.use(VueRouter);
