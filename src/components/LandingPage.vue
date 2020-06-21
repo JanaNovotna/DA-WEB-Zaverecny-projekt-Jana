@@ -4,8 +4,16 @@
       <h1 class="hidden">Dárky bez starostí</h1>
       <p class="claim">Sdílejte svá přání s rodinou a přáteli.</p>
     </div>
-    <h2>Jak to funguje?</h2>
-    <div class="how_it_works">
+
+    <div v-if="wishlists.length > 0 ">
+      <div v-for="(wishlist, index) in wishlists" v-bind:key="index">
+        Seznam
+        <router-link :to="{ path: `/muj_seznam/${wishlist.id}` }">ZDE</router-link>
+      </div>
+    </div>
+
+    <div v-else class="how_it_works">
+      <h2>Jak to funguje?</h2>
       <div class="description">
         <img src="../assets/img/list.png" alt="Seznam" class="des_icon" />
         <p>Vytvořte si seznam dárků.</p>
@@ -13,22 +21,17 @@
       <div class="description">
         <img src="../assets/img/letter.png" alt="Obálka" class="des_icon" />
         <p>
-          Pošlete seznam svým přátelům.<br />
-          Přátele si na seznamu zamluví dárek, který vám chtějí pořídit.
+          Pošlete seznam svým přátelům.
+          <br />Přátele si na seznamu zamluví dárek, který vám chtějí pořídit.
         </p>
       </div>
       <div class="description">
-        <img
-          src="../assets/img/gift.png"
-          alt="Otevřený dárek"
-          class="des_icon"
-        />
+        <img src="../assets/img/gift.png" alt="Otevřený dárek" class="des_icon" />
         <p>Těšte se na to, co dostane za dárky!</p>
       </div>
     </div>
-    <button @click="addList" class="main__button add__button">
-      Vytvořit nový seznam přání
-    </button>
+
+    <button @click="addList" class="main__button add__button">Vytvořit nový seznam přání</button>
   </div>
 </template>
 
@@ -39,6 +42,13 @@ import firebase from "firebase/app";
 export default {
   name: "LandingPage",
 
+  data() {
+    return {
+      currentUserID: localStorage.userID,
+      wishlists: []
+    };
+  },
+
   methods: {
     async addList() {
       const newList = await db
@@ -47,8 +57,24 @@ export default {
       const newListId = (await newList.get()).id;
       console.log(newListId);
       this.$router.push({ name: "mujSeznam", params: { id: newListId } });
-    },
+    }
   },
+
+  firestore() {
+    return {
+      wishlists: db
+        .collection("wishlists")
+        .where("userID", "==", localStorage.userID)
+    };
+  }
+  /* 
+  async created() {
+    const data = await db
+      .collection("wishlists")
+      .where("userID", "==", "d8faea16-f6ce-430b-8839-8092c5fa3d03")
+      .get();
+    this.wishlistIds = data.docs.map((e) => e.data().id);
+  }, */
 };
 </script>
 <style scoped>
