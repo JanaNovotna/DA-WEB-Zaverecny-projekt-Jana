@@ -10,9 +10,9 @@
     </div>
     <div class="container_button">
       <myButton
-        v-bind:taken="wish.taken"
+        v-bind:taken="wish.takenBy !== null"
         v-bind:myList="userType === 'owner'"
-        v-bind:anotherUser="userType === 'donor'"
+        v-bind:anotherUser="wish.takenBy !== currentUserID"
         v-on:changeTaken="changeTaken()"
         v-on:deleteWish="deleteWish()"
       />
@@ -29,13 +29,20 @@ export default {
   components: {
     myButton: Button,
   },
+
+  data() {
+    return {
+      currentUserID: localStorage.userID,
+    };
+  },
+
   props: ["wish", "wishlistID", "userType"],
 
   methods: {
     async changeTaken() {
       const wish = db.collection("wishes").doc(this.wish.id);
       await wish.update({
-        taken: !this.wish.taken,
+        takenBy: this.wish.takenBy === null ? localStorage.userID : null,
       });
     },
     async deleteWish() {

@@ -34,5 +34,5 @@ new Vue({
     if (!localStorage.userID) {
       localStorage.userID = uuidv4();
     }
-  }
+  },
 });

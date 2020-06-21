@@ -28,6 +28,7 @@
       </button>
     </div>
     <div class="url">{{ newURL }}</div>
+    {{ wishlist.userID }}
   </div>
 </template>
 <script>
@@ -41,7 +42,7 @@ export default {
 
   data() {
     return {
-      wishlist: { wishes: [] },
+      wishlist: { wishes: [], userID: "" },
       isModalOpen: false,
       wishlistID: this.$route.params.id,
     };
@@ -81,7 +82,7 @@ export default {
     async addWish(value) {
       const newId = await db
         .collection("wishes")
-        .add({ ...value, taken: false });
+        .add({ ...value, takenBy: null });
       const wishlist = db.collection("wishlists").doc(this.wishlistID);
       await wishlist.update({
         wishes: firebase.firestore.FieldValue.arrayUnion(newId),
