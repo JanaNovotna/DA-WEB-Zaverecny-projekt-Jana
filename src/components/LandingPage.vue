@@ -10,10 +10,17 @@
       <button @click="hide" class="main__button hide__btn">X</button>
     </div>
 
-    <div v-if="wishlists.length > 0 ">
+    <div v-if="wishlists.length > 0">
+      <p>
+        Vídíme, že máte svůj seznam již vytvořený, můžete jej dle potřeby
+        upravit a znovu odeslat svým přátelům.
+      </p>
+
       <div v-for="(wishlist, index) in wishlists" v-bind:key="index">
-        Seznam {{wishlist.list_name}}
-        <router-link :to="{ path: `/muj_seznam/${wishlist.id}` }">EDITOVAT</router-link>
+        Seznam {{ wishlist.list_name }}
+        <router-link :to="{ path: `/muj_seznam/${wishlist.id}` }"
+          >EDITOVAT</router-link
+        >
       </div>
     </div>
 
@@ -30,17 +37,23 @@
           <img src="../assets/img/letter.png" alt="Obálka" class="des_icon" />
           <p>
             Pošlete seznam svým přátelům.
-            <br />Přátele si na seznamu mohou zamluvit dárek,
-            <br />který vám chtějí pořídit.
+            <br />Přátele si na seznamu mohou zamluvit dárek, <br />který vám
+            chtějí pořídit.
           </p>
         </div>
         <div class="description">
-          <img src="../assets/img/gift.png" alt="Otevřený dárek" class="des_icon" />
+          <img
+            src="../assets/img/gift.png"
+            alt="Otevřený dárek"
+            class="des_icon"
+          />
           <p>Těšte se na to, co dostane za dárky!</p>
         </div>
       </div>
     </div>
-    <button @click="isModalOpen = true" class="main__button add__button">Vytvořit nový seznam přání</button>
+    <button @click="isModalOpen = true" class="main__button add__button">
+      Vytvořit nový seznam přání
+    </button>
   </div>
 </template>
 
@@ -53,7 +66,7 @@ export default {
   name: "LandingPage",
 
   components: {
-    listName: ListName
+    listName: ListName,
   },
 
   data() {
@@ -61,7 +74,7 @@ export default {
       currentUserID: localStorage.userID,
       wishlists: [],
       isModalOpen: false,
-      newListID: ""
+      newListID: "",
     };
   },
 
@@ -78,16 +91,16 @@ export default {
 
     hide() {
       this.isModalOpen = false;
-    }
+    },
   },
 
   firestore() {
     return {
       wishlists: db
         .collection("wishlists")
-        .where("userID", "==", localStorage.userID)
+        .where("userID", "==", localStorage.userID),
     };
-  }
+  },
 };
 </script>
 <style scoped>
