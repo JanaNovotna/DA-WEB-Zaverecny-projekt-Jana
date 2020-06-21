@@ -27,7 +27,8 @@
         Tady je odkaz pro sdílení
       </button>
     </div>
-    <div class="url"></div>
+    <div class="url">{{ newURL }}</div>
+    {{ wishlist.userID }}
   </div>
 </template>
 <script>
@@ -41,10 +42,16 @@ export default {
 
   data() {
     return {
-      wishlist: { wishes: [] },
+      wishlist: { wishes: [], userID: "" },
       isModalOpen: false,
       wishlistID: this.$route.params.id,
     };
+  },
+
+  computed: {
+    newURL() {
+      return window.location.origin + "/seznam_prani/" + this.wishlistID;
+    },
   },
 
   firestore() {
@@ -61,9 +68,9 @@ export default {
   methods: {
     getURL() {
       let URL = window.location.href;
-      document.querySelector(".url").textContent = URL;
-      this.$clipboard(URL);
-      window.confirm("Zkopírováno: " + URL);
+      // document.querySelector(".url").textContent = URL;
+      this.$clipboard(this.newURL);
+      alert("Zkopírováno: " + this.newURL);
     },
     show() {
       this.isModalOpen = true;
@@ -75,7 +82,7 @@ export default {
     async addWish(value) {
       const newId = await db
         .collection("wishes")
-        .add({ ...value, taken: false });
+        .add({ ...value, takenBy: null });
       const wishlist = db.collection("wishlists").doc(this.wishlistID);
       await wishlist.update({
         wishes: firebase.firestore.FieldValue.arrayUnion(newId),

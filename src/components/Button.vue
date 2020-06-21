@@ -9,12 +9,15 @@
     </button>
     <button
       class="main__button"
-      v-else-if="taken === true && myList === false"
+      v-else-if="taken === true && myList === false && anotherUser === false"
       @click="changeTaken"
     >
       Zamluveno
     </button>
-    <div class="main__button" v-if="myList === false && anotherUser === true">
+    <div
+      class="main__button"
+      v-if="myList === false && anotherUser === true && taken === true"
+    >
       Není k dispozici
     </div>
     <button
