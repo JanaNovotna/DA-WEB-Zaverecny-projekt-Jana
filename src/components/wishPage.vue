@@ -1,7 +1,7 @@
 <template>
   <div class="wishpage">
     <div class="container_title">
-      <h2>Seznam mých přání</h2>
+      <h1>Seznam mých přání</h1>
     </div>
 
     <div v-if="isModalOpen" class="modal">
@@ -9,7 +9,9 @@
       <button @click="hide" class="main__button hide__btn">X</button>
     </div>
 
-    <div v-if="wishlist.wishes.length === 0">Váš seznam je prázdný</div>
+    <div v-if="wishlist.wishes.length === 0" class="empty__list">
+      Váš seznam je zatím prázdný
+    </div>
 
     <wishList
       v-if="wishlist.wishes.length > 0"
@@ -116,6 +118,12 @@ h2 {
   font-size: 1.8rem;
 }
 
+.empty__list {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
 button {
   padding: 10px 20px;
   font-size: 1.3rem;
@@ -132,7 +140,7 @@ button {
 }
 
 .url {
-  background-color: #2c7873;
+  background-color: #59cbbc;
   width: 50%;
   padding: 2rem;
   margin: 0 auto;

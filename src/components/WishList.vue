@@ -33,7 +33,7 @@ export default {
   justify-content: center;
 }
 .wishlist {
-  background-color: #6fb98f;
+  background-color: #59cbbc;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
   padding: 3rem;

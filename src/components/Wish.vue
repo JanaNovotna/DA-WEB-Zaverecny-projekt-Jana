@@ -69,7 +69,7 @@ a {
   flex-direction: column;
   justify-content: space-between;
   margin: 4vh 0;
-  border: 1px solid #004445;
+  border: 1px solid #000;
   border-radius: 10px;
   padding: 1rem;
 }

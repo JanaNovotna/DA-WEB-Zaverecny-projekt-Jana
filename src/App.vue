@@ -19,14 +19,13 @@ export default {
 }
 
 html {
-  font-family: "Roboto Slab", serif;
-  background-color: #004445;
-  color: #e7dfd5;
+  font-family: "Raleway", sans-serif;
+  background-color: #f2f8f8;
+  color: #000;
 }
 body {
-  margin: 1rem;
+  margin: 0;
 }
-
 .hlavni__obsah {
   display: flex;
   justify-content: center;
@@ -34,15 +33,15 @@ body {
 
 h1 {
   text-align: center;
-  color: rgba(255, 216, 0, 0.8);
+  color: #59cbbc;
 }
 
 h2 {
-  color: #e7dfd5;
+  color: #59cbbc;
 }
 
 h3 {
-  color: #004445;
+  color: #59cbbc;
   font-size: 1.5rem;
   margin: 0;
 }
@@ -79,7 +78,7 @@ h3 {
   display: flex;
   flex-direction: column;
   width: 90vw;
-  border-bottom: 1px solid #e7dfd5;
+  border-bottom: 1px solid #fff;
   margin-bottom: 1rem;
 }
 
@@ -87,19 +86,17 @@ h3 {
   font-family: "Roboto Slab", serif;
   text-decoration: none;
   text-align: center;
-  font-size: 1.1rem;
-  background-color: rgba(255, 217, 0, 0.884);
-  color: #2c7873;
-  max-width: 50vw;
-  padding: 0.5rem;
+  font-size: 1.2rem;
+  background-color: #59cbbc;
+  max-width: 60vw;
+  padding: 1rem;
   border: 0;
   border-radius: 5px;
   transition-duration: 0.4s;
 }
 
 .main__button:hover {
-  background-color: #2c7873;
-  color: rgba(255, 217, 0, 0.884);
+  color: #fff;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
