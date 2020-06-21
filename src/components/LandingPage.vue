@@ -16,8 +16,9 @@
 
       <div v-for="(wishlist, index) in wishlists" v-bind:key="index" class="list_link">
         Seznam
-        <span class="list_name">{{ wishlist.list_name }}</span>
-        <router-link :to="{ path: `/muj_seznam/${wishlist.id}` }" class="link">EDITOVAT</router-link>
+        <router-link :to="{ path: `/muj_seznam/${wishlist.id}` }" class="link">
+          <span class="list_name">{{ wishlist.list_name }}</span>
+        </router-link>
       </div>
       <p>Nebo můžete:</p>
       <button
@@ -165,8 +166,7 @@ p {
 }
 
 .link:hover {
-  color: #59cbbc;
-  text-decoration: underline;
+  text-decoration: underline #59cbbc;
 }
 
 .link:visited {
