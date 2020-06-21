@@ -3,13 +3,8 @@
 </template>
 
 <script>
-import LandingPage from "./components/LandingPage.vue";
-
 export default {
   name: "App",
-  components: {
-    landingPage: LandingPage
-  }
 };
 </script>
 
