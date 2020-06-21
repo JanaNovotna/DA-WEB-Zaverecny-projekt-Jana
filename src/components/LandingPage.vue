@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="hlavni__obsah">
     <div class="header">
       <h1 class="hidden">Dárky bez starostí</h1>
       <p class="claim">Sdílejte svá přání s rodinou a přáteli.</p>
@@ -10,20 +10,24 @@
       <button @click="hide" class="main__button hide__btn">X</button>
     </div>
 
-    <div v-if="wishlists.length > 0">
-      <p>
-        Vídíme, že máte svůj seznam již vytvořený, můžete jej dle potřeby
-        upravit a znovu odeslat svým přátelům.
-      </p>
+    <div v-if="wishlists.length > 0" class="existing_list">
+      <img src="../assets/img/list.png" alt="Seznam" class="des_icon" />
+      <p>Tady jsou vaše seznamy, můžete je upravit a znovu odeslat:</p>
 
-      <div v-for="(wishlist, index) in wishlists" v-bind:key="index">
-        Seznam {{ wishlist.list_name }}
-        <router-link :to="{ path: `/muj_seznam/${wishlist.id}` }">EDITOVAT</router-link>
+      <div v-for="(wishlist, index) in wishlists" v-bind:key="index" class="list_link">
+        Seznam
+        <span class="list_name">{{ wishlist.list_name }}</span>
+        <router-link :to="{ path: `/muj_seznam/${wishlist.id}` }" class="link">EDITOVAT</router-link>
       </div>
+      <p>Nebo můžete:</p>
+      <button
+        @click="isModalOpen = true"
+        class="main__button add__button"
+      >Vytvořit nový seznam přání</button>
     </div>
 
-    <div v-else class="hlavni__obsah">
-      <div class="nadpis">
+    <div v-else class="welcome">
+      <div class="title">
         <h2>Jak to funguje?</h2>
       </div>
       <div class="how_it_works">
@@ -36,8 +40,7 @@
           <p>
             Pošlete seznam svým přátelům.
             <br />Přátele si na seznamu mohou zamluvit dárek,
-            <br />který vám
-            chtějí pořídit.
+            <br />který vám chtějí pořídit.
           </p>
         </div>
         <div class="description">
@@ -45,8 +48,11 @@
           <p>Těšte se na to, co dostane za dárky!</p>
         </div>
       </div>
+      <button
+        @click="isModalOpen = true"
+        class="main__button add__button"
+      >Vytvořit nový seznam přání</button>
     </div>
-    <button @click="isModalOpen = true" class="main__button add__button">Vytvořit nový seznam přání</button>
   </div>
 </template>
 
@@ -106,6 +112,12 @@ p {
   display: none;
 }
 
+.hlavni__obsah {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .header {
   background: url("../assets/img/newDesign.jpg");
   background-position: center center;
@@ -118,16 +130,61 @@ p {
 }
 
 .claim {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   line-height: 4rem;
   font-weight: 600;
   color: #fff;
   margin: 1rem;
 }
 
-.hlavni__obsah {
+.existing_list {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+  background-color: rgb(240, 235, 235);
+  width: 100%;
+}
+
+.list_link {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.list_name {
+  color: #59cbbc;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+.link {
+  text-decoration: none;
+  color: #000;
+}
+
+.link:hover {
+  color: #59cbbc;
+  text-decoration: underline;
+}
+
+.link:visited {
+  color: #000;
+}
+
+.hide__btn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
+  padding: 0;
+}
+
+.welcome {
+  display: flex;
   flex-direction: column;
 }
 
@@ -165,12 +222,16 @@ h2 {
 }
 
 .add__button {
-  margin: 5vh auto;
+  margin: 2rem auto;
   width: 20rem;
   font-size: 1.2rem;
 }
 
 @media (min-width: 640px) {
+  .claim {
+    font-size: 3.5rem;
+  }
+
   .how_it_works {
     flex-direction: row;
   }

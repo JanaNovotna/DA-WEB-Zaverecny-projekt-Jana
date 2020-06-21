@@ -4,8 +4,7 @@
       <h2>Pojmenujte svůj seznam</h2>
     </div>
     <div class="form__body">
-      <label for="list_name">Název seznamu:</label>
-      <input type="text" v-model="list_name" id="list_name" />
+      <input type="text" v-model="list_name" id="list_name" placeholder="Název seznamu" />
 
       <button v-on:click="submitListName" class="main__button add_btn">Odeslat</button>
     </div>
@@ -60,6 +59,7 @@ textarea {
   background-color: #d4d3d3;
   color: #000;
   margin: 0.75rem;
+  font-size: 1rem;
 }
 
 .add_btn {
