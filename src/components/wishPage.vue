@@ -4,7 +4,7 @@
       <h1>Seznam mých přání</h1>
     </div>
     <div class="wish_list_name">
-      <img src="../assets/img/list.png" alt="Seznam" class="des_icon" />
+      <img src="/assets/img/list.png" alt="Seznam" class="des_icon" />
       <h2>{{ wishlist.list_name }}</h2>
     </div>
     <div v-if="isModalOpen" class="modal">
@@ -107,7 +107,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../assets/img/banner.jpg") #59cbbc;
+  background: url("/assets/img/banner.jpg") #59cbbc;
   background-position: center center;
   background-size: cover;
   height: 15vh;
@@ -116,6 +116,9 @@ export default {
 }
 
 .wish_list_name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-bottom: 1rem;
 }
 
