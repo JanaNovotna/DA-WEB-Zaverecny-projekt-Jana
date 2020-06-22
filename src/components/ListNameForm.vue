@@ -6,10 +6,14 @@
     <div class="form__body">
       <input
         type="text"
-        v-model="list_name"
+        v-model="$v.list_name.$model"
         id="list_name"
         placeholder="Název seznamu"
       />
+
+      <p class="error" v-if="$v.list_name.required === false">
+        Toto pole je povinné
+      </p>
 
       <button v-on:click="submitListName" class="main__button add_btn">
         Odeslat
@@ -18,7 +22,7 @@
   </div>
 </template>
 <script>
-import { required, minLength } from "vuelidate/lib/validators";
+import { required } from "vuelidate/lib/validators";
 
 export default {
   name: "ListNameForm",
@@ -26,18 +30,12 @@ export default {
   data() {
     return {
       list_name: "",
-      formResponses: {
-        name: "",
-      },
     };
   },
 
   validations: {
-    formResponses: {
-      name: {
-        required,
-        minLength: minLength(2),
-      },
+    list_name: {
+      required,
     },
   },
 
@@ -86,5 +84,10 @@ textarea {
 .add_btn {
   width: 30vw;
   margin: 2rem;
+}
+
+.error {
+  color: white;
+  font-size: 0.9rem;
 }
 </style>
