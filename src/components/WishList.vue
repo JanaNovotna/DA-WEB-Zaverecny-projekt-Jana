@@ -39,4 +39,10 @@ export default {
     flex: 1 0 45%;
   }
 }
+
+@media (min-width: 1280px) {
+  .wish {
+    flex: 1 0 32%;
+  }
+}
 </style>
