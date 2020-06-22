@@ -8,6 +8,7 @@
       <p class="wish_link" v-if="wish.link !== ''">
         <a v-bind:href="wish.link" target="_blank">Odkaz na dárek</a>
       </p>
+      <p class="wish_link_empty" v-else></p>
     </div>
 
     <div class="wish-btn">
@@ -29,12 +30,12 @@ import firebase from "firebase/app";
 export default {
   name: "Wish",
   components: {
-    myButton: Button
+    myButton: Button,
   },
 
   data() {
     return {
-      currentUserID: localStorage.userID
+      currentUserID: localStorage.userID,
     };
   },
 
@@ -44,7 +45,7 @@ export default {
     async changeTaken() {
       const wish = db.collection("wishes").doc(this.wish.id);
       await wish.update({
-        takenBy: this.wish.takenBy === null ? localStorage.userID : null
+        takenBy: this.wish.takenBy === null ? localStorage.userID : null,
       });
     },
     async deleteWish() {
@@ -52,10 +53,10 @@ export default {
       await wish.delete();
       const wishlist = db.collection("wishlists").doc(this.wishlistID);
       await wishlist.update({
-        wishes: firebase.firestore.FieldValue.arrayRemove(wish)
+        wishes: firebase.firestore.FieldValue.arrayRemove(wish),
       });
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
@@ -104,6 +105,11 @@ export default {
 .wish_btn {
   flex-basis: 24%;
 }
+
+.wish_link_empty {
+  padding: 1rem;
+}
+
 @media (min-width: 640px) {
 }
 </style>

@@ -183,7 +183,7 @@ export default {
 
 @media (min-width: 1280px) {
   .share_link {
-    width: 30vw;
+    width: 40vw;
   }
 }
 </style>

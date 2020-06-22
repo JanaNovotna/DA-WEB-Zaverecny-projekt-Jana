@@ -22,7 +22,10 @@
 
     <div v-if="wishlists.length > 0" class="existing_list" id="welcome">
       <img src="../assets/img/list.png" alt="Seznam" class="des_icon" />
-      <p>Tady jsou vaše seznamy, můžete je upravit a znovu odeslat:</p>
+      <p>
+        Tady najdete vaše seznamy přání. <br />
+        Můžete je dále upravovat nebo sdílet s dalšími osobami.
+      </p>
 
       <div
         v-for="(wishlist, index) in wishlists"
