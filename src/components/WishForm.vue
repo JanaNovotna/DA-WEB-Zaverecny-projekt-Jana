@@ -8,32 +8,24 @@
       <label for="title">Název dárku:</label>
       <input type="text" v-model="$v.title.$model" id="title" />
 
-      <p class="error" v-if="$v.title.required === false">
-        Toto pole je povinné
-      </p>
+      <p class="error" v-if="$v.title.required === false">Toto pole je povinné</p>
 
       <label for="popis">Krátký popis dárku:</label>
-      <textarea
-        v-model="$v.description.$model"
-        id="popis"
-        cols="30"
-        rows="10"
-      ></textarea>
+      <textarea v-model="$v.description.$model" id="popis" cols="30" rows="10"></textarea>
 
-      <p class="error" v-if="$v.description.required === false">
-        Toto pole je povinné
-      </p>
+      <p class="error" v-if="$v.description.required === false">Toto pole je povinné</p>
 
       <label for="web_address">Odkaz:</label>
-      <input type="url" v-model="$v.link.$model" id="web_address" />
+      <input
+        type="url"
+        v-model="$v.link.$model"
+        id="web_address"
+        placeholder="http://www.adresa.xyz přípdně https://www.adresa.xyz"
+      />
 
-      <p class="error" v-if="$v.link.url === false">
-        Zadejte prosím platné URL
-      </p>
+      <p class="error" v-if="$v.link.url === false">Zadejte prosím platné URL</p>
 
-      <button v-on:click="addPresent" class="main__button add_btn">
-        Přidat dárek na seznam
-      </button>
+      <button v-on:click="addPresent" class="main__button add_btn">Přidat dárek na seznam</button>
     </div>
   </div>
 </template>
@@ -47,7 +39,7 @@ export default {
     return {
       title: "",
       description: "",
-      link: "",
+      link: ""
     };
   },
 
@@ -61,23 +53,23 @@ export default {
       this.$emit("push", {
         title: this.title,
         description: this.description,
-        link: this.link,
+        link: this.link
       });
       this.$emit("hide");
-    },
+    }
   },
 
   validations: {
     title: {
-      required,
+      required
     },
     description: {
-      required,
+      required
     },
     link: {
-      url,
-    },
-  },
+      url
+    }
+  }
 };
 </script>
 <style scoped>
