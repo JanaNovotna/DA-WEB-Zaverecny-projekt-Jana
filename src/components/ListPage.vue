@@ -3,7 +3,9 @@
     <div class="container_title">
       <h1>Seznam přání</h1>
     </div>
-
+    <div class="title">
+      <h2>Jak to funguje?</h2>
+    </div>
     <div class="how_it_works">
       <div class="description">
         <img src="/assets/img/search.png" alt="Lupa" class="des_icon" />
@@ -89,12 +91,17 @@ export default {
   width: 90vw;
   padding-bottom: 1rem;
   border-bottom: 1px solid #fff;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .des_icon {
   width: 4rem;
-  margin: 1rem auto;
+  margin: 1.5rem auto;
+}
+
+.title {
+  margin-bottom: 0.5rem;
 }
 
 @media (min-width: 640px) {
