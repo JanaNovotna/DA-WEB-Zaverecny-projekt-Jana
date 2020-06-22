@@ -59,7 +59,7 @@ export default {
 .one_wish {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   border: 1px solid rgb(112, 111, 111);
   border-radius: 10px;
   padding: 0.5rem;
@@ -87,7 +87,6 @@ export default {
 
 .wish_btn {
   flex-basis: 24%;
-  align-self: center;
 }
 @media (min-width: 640px) {
 }
