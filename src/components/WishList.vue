@@ -42,7 +42,7 @@ export default {
 
 @media (min-width: 1280px) {
   .wish_list {
-    width: 75vw;
+    margin: 0 20vw;
   }
   .wish {
     flex: 0 0 32%;
