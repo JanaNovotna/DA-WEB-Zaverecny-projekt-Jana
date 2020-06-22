@@ -19,8 +19,8 @@ export default {
   props: ["wishes", "wishlistID", "userType"],
 
   components: {
-    wish: Wish
-  }
+    wish: Wish,
+  },
 };
 </script>
 <style scoped>
@@ -36,11 +36,14 @@ export default {
     flex-wrap: wrap;
   }
   .wish {
-    flex: 1 0 45%;
+    flex: 0 0 45%;
   }
 }
 
 @media (min-width: 1280px) {
+  .wish_list {
+    width: 75vw;
+  }
   .wish {
     flex: 0 0 32%;
   }
