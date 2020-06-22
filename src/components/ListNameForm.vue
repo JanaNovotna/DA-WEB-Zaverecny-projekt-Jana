@@ -4,11 +4,20 @@
       <h2>Pojmenujte svůj seznam</h2>
     </div>
     <div class="form__body">
-      <input type="text" v-model="$v.list_name.$model" id="list_name" placeholder="Název seznamu" />
+      <input
+        type="text"
+        v-model="$v.list_name.$model"
+        id="list_name"
+        placeholder="Název seznamu"
+      />
 
-      <p class="error" v-if="$v.list_name.required === false">Toto pole je povinné</p>
+      <p class="error" v-if="$v.list_name.required === false">
+        Toto pole je povinné
+      </p>
 
-      <button v-on:click="submitListName" class="main__button add_btn">Odeslat</button>
+      <button v-on:click="submitListName" class="main__button add_btn">
+        Odeslat
+      </button>
     </div>
   </div>
 </template>
@@ -20,14 +29,14 @@ export default {
 
   data() {
     return {
-      list_name: ""
+      list_name: "",
     };
   },
 
   validations: {
     list_name: {
-      required
-    }
+      required,
+    },
   },
 
   methods: {
@@ -36,11 +45,11 @@ export default {
     },
     submitListName() {
       this.$emit("push", {
-        list_name: this.list_name
+        list_name: this.list_name,
       });
       this.$emit("hide");
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
@@ -51,7 +60,7 @@ export default {
   flex-wrap: wrap;
   margin: 0 auto;
   max-width: 80%;
-  padding: 4rem 0.5rem 3rem;
+  padding: 3rem 0.5rem 2rem;
 }
 
 .form__head {

@@ -85,9 +85,9 @@ export default {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  padding: 1rem;
-  width: 95vw;
+  width: 80vw;
   margin: 0 auto;
+  padding: 3rem 0.5rem 2rem;
 }
 
 .form__head {
@@ -105,7 +105,8 @@ textarea {
   background-color: #d4d3d3;
   color: #000;
   font-size: 1rem;
-  margin: 0.75rem;
+  margin: 0.75rem 0;
+  max-width: 75vw;
 }
 
 .add_btn {
@@ -117,5 +118,30 @@ textarea {
   color: white;
   font-size: 0.9rem;
   margin-bottom: 1rem;
+}
+@media (min-width: 640px) {
+  .newWish {
+    max-width: 70%;
+  }
+
+  .newWish h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .error {
+    font-size: 1rem;
+  }
+
+  input {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .newWish {
+    max-width: 70%;
+  }
 }
 </style>
