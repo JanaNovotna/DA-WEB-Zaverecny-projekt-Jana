@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <div class="container_title">
+  <div class="my_wish_list">
+    <div class="header_container">
       <h1>Seznam mých přání</h1>
     </div>
-    <div>
+    <div class="wish_list_name">
       <h2>{{wishlist.list_name}}</h2>
     </div>
     <div v-if="isModalOpen" class="modal">
@@ -12,19 +12,20 @@
     </div>
 
     <div v-if="wishlist.wishes.length === 0" class="empty__list">Váš seznam je zatím prázdný</div>
+    <div class="wish_list">
+      <wishList
+        v-if="wishlist.wishes.length > 0"
+        v-bind:wishes="wishlist.wishes"
+        v-bind:wishlistID="wishlistID"
+        v-bind:userType="'owner'"
+      />
+    </div>
 
-    <wishList
-      v-if="wishlist.wishes.length > 0"
-      v-bind:wishes="wishlist.wishes"
-      v-bind:wishlistID="wishlistID"
-      v-bind:userType="'owner'"
-    />
-
-    <div class="container_button">
+    <div class="add_new_wish_btn">
       <button @click="show" class="main__button">Vložit přání</button>
     </div>
 
-    <div class="odkaz">
+    <div class="share_link">
       <div class="url">{{ newURL }}</div>
       <button class="main__button small__button" @click="getURL">Sdílet</button>
     </div>
@@ -92,20 +93,17 @@ export default {
 </script>
 
 <style scoped>
-.modal {
-  width: 100vw;
-  height: 100wh;
-  background-color: rgba(0, 0, 0, 0.85);
-  position: fixed;
-  left: 0;
-  top: 0;
+.my_wish_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-/* 
-.wishpage {
-  margin: 10vh 0;
-  padding: 0 5vw;
-} */
-.container_title {
+
+.header_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: url("../assets/img/banner.jpg");
   background-position: center center;
   background-size: cover;
@@ -114,21 +112,37 @@ export default {
   margin-bottom: 2rem;
 }
 
-.container_title,
-.container_button {
-  text-align: center;
-}
-
 .empty__list {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 500;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 1.3rem;
-  margin: 5vh 0;
+.share_link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+.url {
+  margin: 0.75rem;
+}
+
+.small__button {
+  max-width: 10vw;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.modal {
+  width: 100vw;
+  height: 100wh;
+  background-color: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
 .hide__btn {
@@ -140,28 +154,9 @@ button {
   text-align: center;
 }
 
-.odkaz {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-.url {
-  text-align: center;
-  margin: 0.75rem;
-}
-
-.small__button {
-  max-width: 10vw;
-  font-size: 1rem;
-  margin: 0;
-}
-
 @media (min-width: 640px) {
-  .odkaz {
+  .share_link {
     width: 80vw;
-    margin: 0 auto;
   }
 }
 </style>
