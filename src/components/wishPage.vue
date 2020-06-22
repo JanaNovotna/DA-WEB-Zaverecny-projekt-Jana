@@ -5,14 +5,16 @@
     </div>
     <div class="wish_list_name">
       <img src="../assets/img/list.png" alt="Seznam" class="des_icon" />
-      <h2>{{wishlist.list_name}}</h2>
+      <h2>{{ wishlist.list_name }}</h2>
     </div>
     <div v-if="isModalOpen" class="modal">
       <wishForm v-on:push="addWish($event)" @hide="hide" />
       <button @click="hide" class="main__button hide__btn">X</button>
     </div>
 
-    <div v-if="wishlist.wishes.length === 0" class="empty__list">Váš seznam je zatím prázdný</div>
+    <div v-if="wishlist.wishes.length === 0" class="empty__list">
+      Váš seznam je zatím prázdný
+    </div>
     <div class="wish_list">
       <wishList
         v-if="wishlist.wishes.length > 0"
@@ -45,25 +47,25 @@ export default {
     return {
       wishlist: { wishes: [], userID: "" },
       isModalOpen: false,
-      wishlistID: this.$route.params.id
+      wishlistID: this.$route.params.id,
     };
   },
 
   computed: {
     newURL() {
       return window.location.origin + "/seznam_prani/" + this.wishlistID;
-    }
+    },
   },
 
   firestore() {
     return {
-      wishlist: db.collection("wishlists").doc(this.wishlistID)
+      wishlist: db.collection("wishlists").doc(this.wishlistID),
     };
   },
 
   components: {
     wishList: WishList,
-    wishForm: WishForm
+    wishForm: WishForm,
   },
 
   methods: {
@@ -86,10 +88,10 @@ export default {
         .add({ ...value, takenBy: null });
       const wishlist = db.collection("wishlists").doc(this.wishlistID);
       await wishlist.update({
-        wishes: firebase.firestore.FieldValue.arrayUnion(newId)
+        wishes: firebase.firestore.FieldValue.arrayUnion(newId),
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -164,10 +166,10 @@ export default {
 .hide__btn {
   position: absolute;
   right: 2vw;
-  top: -2vh;
+  top: 2vh;
   width: 2.5rem;
   height: 2.5rem;
-  text-align: center;
+  padding: 0;
 }
 
 @media (min-width: 640px) {
