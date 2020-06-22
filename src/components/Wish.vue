@@ -59,17 +59,21 @@ export default {
 <style scoped>
 .one_wish {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   border: 1px solid black;
   border-radius: 10px;
   padding: 0.5rem;
   margin: 0.5rem;
 }
 .wish_content {
-  flex-basis: 80%;
+  flex-basis: 75%;
   margin-right: 0.5rem;
+  word-break: break-all;
 }
 .wish_btn {
-  flex-basis: 19%;
+  flex-basis: 24%;
+  align-self: center;
 }
 @media (min-width: 640px) {
 }

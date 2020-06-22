@@ -27,7 +27,7 @@ export default {
 .wish_list {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 90vw;
 }
 
 @media (min-width: 640px) {
@@ -37,7 +37,6 @@ export default {
   }
   .wish {
     flex: 1 0 45%;
-    word-break: break-all;
   }
 }
 </style>
