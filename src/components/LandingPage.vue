@@ -10,9 +10,6 @@
         alt="Šipka dolů"
         v-scroll-to="'#welcome'"
       />
-      <!--       <a href="#descrip" class="down_arrow">
-        
-      </a>-->
     </div>
 
     <div v-if="isModalOpen" class="modal">
@@ -45,7 +42,7 @@
         <h2>Jak to funguje?</h2>
       </div>
       <div class="how_it_works">
-        <div class="description" id="descrip">
+        <div class="description">
           <img src="../assets/img/list.png" alt="Seznam" class="des_icon" />
           <p>Vytvořte si seznam dárků.</p>
         </div>
@@ -164,7 +161,7 @@ p {
 
 .down_arrow {
   position: absolute;
-  bottom: 18px;
+  bottom: 16.5px;
 }
 
 .down_arrow:hover {
@@ -245,7 +242,7 @@ h2 {
 }
 
 .add__button {
-  margin: 1rem auto;
+  margin: 1rem auto 3rem auto;
   width: 20rem;
   font-size: 1.2rem;
 }
