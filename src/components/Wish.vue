@@ -1,6 +1,6 @@
 <template>
-  <div class="wish">
-    <div class="container_content">
+  <div class="one_wish">
+    <div class="wish_content">
       <h3>{{ wish.title }}</h3>
       <p>{{ wish.description }}</p>
       <p>
@@ -8,7 +8,7 @@
         <a v-bind:href="wish.link" target="_blank">ZDE</a>
       </p>
     </div>
-    <div class="container_button">
+    <div class="wish-btn">
       <myButton
         v-bind:taken="wish.takenBy !== null"
         v-bind:myList="userType === 'owner'"
@@ -57,29 +57,20 @@ export default {
 };
 </script>
 <style scoped>
-.wish {
+.one_wish {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid #000;
+  border: 1px solid black;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
 }
-
-.container_button {
-  display: flex;
-  justify-content: right;
-  max-width: 15vw;
+.wish_content {
+  flex-basis: 80%;
+  margin-right: 0.5rem;
 }
-
+.wish_btn {
+  flex-basis: 19%;
+}
 @media (min-width: 640px) {
-  .wish {
-    flex-direction: row;
-  }
-
-  .container_button {
-    align-items: flex-start;
-    max-width: 20vw;
-  }
 }
 </style>
