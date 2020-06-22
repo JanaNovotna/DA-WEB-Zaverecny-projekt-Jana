@@ -37,6 +37,7 @@ export default {
   }
   .wish {
     flex: 1 0 45%;
+    word-break: break-all;
   }
 }
 </style>
