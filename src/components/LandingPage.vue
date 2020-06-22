@@ -52,9 +52,9 @@
         <div class="description">
           <img src="../assets/img/letter.png" alt="Obálka" class="des_icon" />
           <p>
-            Pošlete seznam svým přátelům.
-            <br />Přátele si na seznamu mohou zamluvit dárek, <br />který vám
-            chtějí pořídit.
+            Sdílejte svůj seznam.
+            <br />Přátelé, členové rodiny nebo kolegové si na seznamu zamluví
+            dárek, <br />který vám chtějí pořídit.
           </p>
         </div>
         <div class="description">
@@ -288,6 +288,12 @@ h2 {
 
   .existing_list p {
     margin: 1rem 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .claim {
+    font-size: 4.5rem;
   }
 }
 </style>
