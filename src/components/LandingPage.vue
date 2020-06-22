@@ -261,7 +261,7 @@ h2 {
 
 .hide__btn {
   position: absolute;
-  right: 1rem;
+  right: 1.5rem;
   top: 1rem;
   width: 2.5rem;
   height: 2.5rem;
