@@ -61,7 +61,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid rgb(112, 111, 111);
   border-radius: 10px;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -70,7 +70,13 @@ export default {
   flex-basis: 75%;
   margin-right: 0.5rem;
   word-break: break-all;
+  font-weight: 500;
 }
+
+.wish_content p {
+  margin-top: 0.5rem;
+}
+
 .wish_btn {
   flex-basis: 24%;
   align-self: center;

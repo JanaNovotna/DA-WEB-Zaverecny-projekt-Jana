@@ -1,40 +1,30 @@
 <template>
   <div>
     <button
-      class="main__button"
+      class="wish_button"
       v-if="taken === false && myList === false"
       @click="changeTaken"
-    >
-      Zamluv si mě
-    </button>
+    >Zamluv si mě</button>
     <button
-      class="main__button"
+      class="wish_button"
       v-else-if="taken === true && myList === false && anotherUser === false"
       @click="changeTaken"
-    >
-      Zamluveno
-    </button>
+    >Zamluveno</button>
     <div
-      class="main__button"
+      class="wish_button"
       v-if="myList === false && anotherUser === true && taken === true"
-    >
-      Není k dispozici
-    </div>
+    >Není k dispozici</div>
     <button
-      class="main__button"
+      class="wish_button"
       v-if="myList === true && taken === false"
       @click="deleteWish"
-    >
-      Smazat přání
-    </button>
+    >Smazat přání</button>
     <button
-      class="main__button"
+      class="wish_button"
       v-if="myList === true && taken === true"
       :disabled="false"
       @click="message"
-    >
-      Smazat přání
-    </button>
+    >Smazat přání</button>
   </div>
 </template>
 <script>
@@ -45,7 +35,7 @@ export default {
 
   data() {
     return {
-      disabled: false,
+      disabled: false
     };
   },
 
@@ -59,7 +49,28 @@ export default {
     },
     deleteWish() {
       this.$emit("deleteWish");
-    },
-  },
+    }
+  }
 };
 </script>
+
+<style scoped>
+.wish_button {
+  text-decoration: none;
+  text-align: center;
+  font-size: 1rem;
+  background-color: rgba(89, 203, 188, 0.6);
+  color: rgb(71, 71, 71);
+  max-width: 60vw;
+  padding: 0.5rem;
+  border: 0;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+}
+
+.wish_button:hover {
+  color: #fff;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+</style>

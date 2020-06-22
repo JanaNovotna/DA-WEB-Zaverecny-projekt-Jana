@@ -136,7 +136,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid rgb(112, 111, 111);
   border-radius: 5px;
   margin-top: 2rem;
 }

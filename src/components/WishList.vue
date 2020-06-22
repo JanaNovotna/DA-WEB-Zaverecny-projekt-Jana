@@ -42,7 +42,7 @@ export default {
 
 @media (min-width: 1280px) {
   .wish {
-    flex: 1 0 32%;
+    flex: 0 0 32%;
   }
 }
 </style>
