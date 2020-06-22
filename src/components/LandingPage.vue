@@ -4,12 +4,9 @@
       <img src="../assets/img/4U.png" alt="logo" class="logo" />
       <h1 class="hidden">Dárky bez starostí</h1>
       <p class="claim">Sdílejte svá přání s rodinou a přáteli.</p>
-      <a href="#descrip"
-        ><img
-          src="../assets/img/downBtn.png"
-          alt="Šipka dolů"
-          class="down_arrow"
-      /></a>
+      <a href="#descrip" class="down_arrow">
+        <img src="../assets/img/downBtn.png" alt="Šipka dolů" />
+      </a>
     </div>
 
     <div v-if="isModalOpen" class="modal">
@@ -21,20 +18,17 @@
       <img src="../assets/img/list.png" alt="Seznam" class="des_icon" />
       <p>Tady jsou vaše seznamy, můžete je upravit a znovu odeslat:</p>
 
-      <div
-        v-for="(wishlist, index) in wishlists"
-        v-bind:key="index"
-        class="list_link"
-      >
+      <div v-for="(wishlist, index) in wishlists" v-bind:key="index" class="list_link">
         Seznam
         <router-link :to="{ path: `/muj_seznam/${wishlist.id}` }" class="link">
           <span class="list_name">{{ wishlist.list_name }}</span>
         </router-link>
       </div>
       <p class="or">Nebo:</p>
-      <button @click="isModalOpen = true" class="main__button add__button">
-        Vytvořte nový seznam přání
-      </button>
+      <button
+        @click="isModalOpen = true"
+        class="main__button add__button"
+      >Vytvořte nový seznam přání</button>
     </div>
 
     <div v-else class="welcome">
@@ -50,22 +44,20 @@
           <img src="../assets/img/letter.png" alt="Obálka" class="des_icon" />
           <p>
             Pošlete seznam svým přátelům.
-            <br />Přátele si na seznamu mohou zamluvit dárek, <br />který vám
+            <br />Přátele si na seznamu mohou zamluvit dárek,
+            <br />který vám
             chtějí pořídit.
           </p>
         </div>
         <div class="description">
-          <img
-            src="../assets/img/gift.png"
-            alt="Otevřený dárek"
-            class="des_icon"
-          />
+          <img src="../assets/img/gift.png" alt="Otevřený dárek" class="des_icon" />
           <p>Těšte se na to, co dostane za dárky!</p>
         </div>
       </div>
-      <button @click="isModalOpen = true" class="main__button add__button or">
-        Vytvořit nový seznam přání
-      </button>
+      <button
+        @click="isModalOpen = true"
+        class="main__button add__button or"
+      >Vytvořit nový seznam přání</button>
     </div>
   </div>
 </template>
@@ -79,7 +71,7 @@ export default {
   name: "LandingPage",
 
   components: {
-    listName: ListName,
+    listName: ListName
   },
 
   data() {
@@ -87,7 +79,7 @@ export default {
       currentUserID: localStorage.userID,
       wishlists: [],
       isModalOpen: false,
-      newListID: "",
+      newListID: ""
     };
   },
 
@@ -104,16 +96,16 @@ export default {
 
     hide() {
       this.isModalOpen = false;
-    },
+    }
   },
 
   firestore() {
     return {
       wishlists: db
         .collection("wishlists")
-        .where("userID", "==", localStorage.userID),
+        .where("userID", "==", localStorage.userID)
     };
-  },
+  }
 };
 </script>
 <style scoped>
@@ -139,6 +131,7 @@ p {
   width: 100%;
   height: 98vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -160,8 +153,7 @@ p {
 
 .down_arrow {
   position: absolute;
-  right: 30%;
-  bottom: 17px;
+  bottom: 14px;
 }
 
 .down_arrow:hover {
@@ -269,11 +261,6 @@ h2 {
 @media (min-width: 640px) {
   .claim {
     font-size: 3.5rem;
-  }
-
-  .down_arrow {
-    right: 42%;
-    bottom: 18px;
   }
 
   .how_it_works {
