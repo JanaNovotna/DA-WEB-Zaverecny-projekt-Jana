@@ -172,7 +172,13 @@ export default {
 
 @media (min-width: 640px) {
   .share_link {
-    width: 80vw;
+    width: 40vw;
+  }
+}
+
+@media (min-width: 1280px) {
+  .share_link {
+    width: 30vw;
   }
 }
 </style>
