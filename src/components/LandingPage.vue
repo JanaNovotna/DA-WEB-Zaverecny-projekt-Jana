@@ -20,11 +20,11 @@
           <span class="list_name">{{ wishlist.list_name }}</span>
         </router-link>
       </div>
-      <p>Nebo můžete:</p>
+      <p class="or">Nebo:</p>
       <button
         @click="isModalOpen = true"
         class="main__button add__button"
-      >Vytvořit nový seznam přání</button>
+      >Vytvořte nový seznam přání</button>
     </div>
 
     <div v-else class="welcome">
@@ -51,7 +51,7 @@
       </div>
       <button
         @click="isModalOpen = true"
-        class="main__button add__button"
+        class="main__button add__button or"
       >Vytvořit nový seznam přání</button>
     </div>
   </div>
@@ -143,10 +143,13 @@ p {
   flex-direction: column;
   justify-content: center;
   font-size: 1.2rem;
-  padding-top: 1.5rem;
-  padding-bottom: 0.5rem;
+  padding: 1.5rem 0.5rem 0.5rem 0.5rem;
   background-color: rgb(240, 235, 235);
   width: 100%;
+}
+
+.existing_list p {
+  margin: 0.5rem 0;
 }
 
 .list_link {
@@ -173,14 +176,9 @@ p {
   color: #000;
 }
 
-.hide__btn {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  text-align: center;
-  padding: 0;
+.or {
+  font-size: 1rem;
+  margin-bottom: 0;
 }
 
 .welcome {
@@ -212,6 +210,12 @@ h2 {
   margin: 1rem auto;
 }
 
+.add__button {
+  margin: 1rem auto;
+  width: 20rem;
+  font-size: 1.2rem;
+}
+
 .modal {
   width: 100vw;
   height: 100wh;
@@ -221,10 +225,14 @@ h2 {
   top: 0;
 }
 
-.add__button {
-  margin: 2rem auto;
-  width: 20rem;
-  font-size: 1.2rem;
+.hide__btn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
+  padding: 0;
 }
 
 @media (min-width: 640px) {
@@ -242,6 +250,10 @@ h2 {
   }
   .add__button {
     max-width: 25vw;
+  }
+
+  .existing_list p {
+    margin: 1rem 0;
   }
 }
 </style>
