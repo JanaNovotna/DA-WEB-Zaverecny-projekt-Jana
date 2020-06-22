@@ -168,7 +168,7 @@ export default {
 
 .hide__btn {
   position: absolute;
-  right: 2vw;
+  right: 3.5vw;
   top: 2vh;
   width: 2.5rem;
   height: 2.5rem;
