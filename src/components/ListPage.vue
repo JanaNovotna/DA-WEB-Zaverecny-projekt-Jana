@@ -18,19 +18,19 @@ import firebase from "firebase/app";
 export default {
   name: "ListPage",
   components: {
-    wishList: WishList
+    wishList: WishList,
   },
   data() {
     return {
       wishlist: { wishes: [] },
-      wishlistID: this.$route.params.id
+      wishlistID: this.$route.params.id,
     };
   },
   firestore() {
     return {
-      wishlist: db.collection("wishlists").doc(this.wishlistID)
+      wishlist: db.collection("wishlists").doc(this.wishlistID),
     };
-  }
+  },
 };
 </script>
 <style scoped>
@@ -38,7 +38,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../assets/img/banner.jpg") #59cbbc;
+  background: url("/assets/img/banner.jpg") #59cbbc;
   background-position: center center;
   background-size: cover;
   height: 15vh;
