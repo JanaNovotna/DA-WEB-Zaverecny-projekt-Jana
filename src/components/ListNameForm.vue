@@ -4,20 +4,41 @@
       <h2>Pojmenujte svůj seznam</h2>
     </div>
     <div class="form__body">
-      <input type="text" v-model="list_name" id="list_name" placeholder="Název seznamu" />
+      <input
+        type="text"
+        v-model="list_name"
+        id="list_name"
+        placeholder="Název seznamu"
+      />
 
-      <button v-on:click="submitListName" class="main__button add_btn">Odeslat</button>
+      <button v-on:click="submitListName" class="main__button add_btn">
+        Odeslat
+      </button>
     </div>
   </div>
 </template>
 <script>
+import { required, minLength } from "vuelidate/lib/validators";
+
 export default {
   name: "ListNameForm",
 
   data() {
     return {
-      list_name: ""
+      list_name: "",
+      formResponses: {
+        name: "",
+      },
     };
+  },
+
+  validations: {
+    formResponses: {
+      name: {
+        required,
+        minLength: minLength(2),
+      },
+    },
   },
 
   methods: {
@@ -26,11 +47,11 @@ export default {
     },
     submitListName() {
       this.$emit("push", {
-        list_name: this.list_name
+        list_name: this.list_name,
       });
       this.$emit("hide");
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>

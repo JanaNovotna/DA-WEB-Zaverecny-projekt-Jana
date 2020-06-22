@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VModal from 'vue-js-modal';
 import Clipboard from 'v-clipboard';
+import Vuelidate from "vuelidate";
 import { v4 as uuidv4 } from 'uuid';
 
 import { firestorePlugin } from 'vuefire'
@@ -16,6 +17,7 @@ Vue.use(VueRouter);
 Vue.use(VModal);
 Vue.use(Clipboard);
 Vue.use(firestorePlugin)
+Vue.use(Vuelidate);
 
 const myRouter = new VueRouter({
   mode: 'history',

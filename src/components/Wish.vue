@@ -1,12 +1,15 @@
 <template>
   <div class="one_wish">
-    <div class="wish_content">
-      <h3>{{ wish.title }}</h3>
-      <p>{{ wish.description }}</p>
-      <p>
+    <div class="wish_container">
+      <div class="wish_content">
+        <h3>{{ wish.title }}</h3>
+        <p>{{ wish.description }}</p>
+      </div>
+      <p class="wish_link">
         <a v-bind:href="wish.link" target="_blank">Odkaz na dárek</a>
       </p>
     </div>
+
     <div class="wish-btn">
       <myButton
         v-bind:taken="wish.takenBy !== null"
@@ -26,12 +29,12 @@ import firebase from "firebase/app";
 export default {
   name: "Wish",
   components: {
-    myButton: Button
+    myButton: Button,
   },
 
   data() {
     return {
-      currentUserID: localStorage.userID
+      currentUserID: localStorage.userID,
     };
   },
 
@@ -41,7 +44,7 @@ export default {
     async changeTaken() {
       const wish = db.collection("wishes").doc(this.wish.id);
       await wish.update({
-        takenBy: this.wish.takenBy === null ? localStorage.userID : null
+        takenBy: this.wish.takenBy === null ? localStorage.userID : null,
       });
     },
     async deleteWish() {
@@ -49,10 +52,10 @@ export default {
       await wish.delete();
       const wishlist = db.collection("wishlists").doc(this.wishlistID);
       await wishlist.update({
-        wishes: firebase.firestore.FieldValue.arrayRemove(wish)
+        wishes: firebase.firestore.FieldValue.arrayRemove(wish),
       });
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
@@ -65,9 +68,16 @@ export default {
   padding: 0.5rem;
   margin: 0.5rem;
 }
-.wish_content {
-  flex-basis: 75%;
+
+.wish_container {
   align-self: flex-start;
+  flex-basis: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.wish_content {
   margin-right: 0.5rem;
   /* word-break: break-all; */
   font-weight: 500;
@@ -77,11 +87,17 @@ export default {
   margin-top: 0.5rem;
 }
 
-.wish_content a {
+.wish_link {
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  font-weight: 500;
+}
+
+.wish_link a {
   color: black;
 }
 
-.wish_content a:hover {
+.wish_link a:hover {
   color: #59cbbc;
 }
 
