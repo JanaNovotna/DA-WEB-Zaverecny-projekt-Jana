@@ -36,11 +36,14 @@ export default {
     flex-wrap: wrap;
   }
   .wish {
-    flex: 1 0 45%;
+    flex: 0 0 45%;
   }
 }
 
 @media (min-width: 1280px) {
+  .wish_list {
+    margin: 0 20vw;
+  }
   .wish {
     flex: 0 0 32%;
   }
