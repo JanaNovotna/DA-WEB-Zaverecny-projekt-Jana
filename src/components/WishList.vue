@@ -16,11 +16,11 @@ import Wish from "./Wish.vue";
 export default {
   name: "WishList",
 
-  props: ["wishes", "wishlistID", "userType"],
-
   components: {
-    wish: Wish
-  }
+    wish: Wish,
+  },
+
+  props: ["wishes", "wishlistID", "userType"],
 };
 </script>
 <style scoped>

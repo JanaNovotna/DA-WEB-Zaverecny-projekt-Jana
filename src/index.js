@@ -5,7 +5,6 @@ import Clipboard from 'v-clipboard';
 import Vuelidate from "vuelidate";
 import VueScrollTo from "vue-scrollto";
 import { v4 as uuidv4 } from 'uuid';
-
 import { firestorePlugin } from 'vuefire'
 
 import App from './App.vue';

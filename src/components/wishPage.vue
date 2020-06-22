@@ -3,18 +3,16 @@
     <div class="header_container">
       <h1>Seznam mých přání</h1>
     </div>
+
     <div class="wish_list_name">
       <img src="/assets/img/list.png" alt="Seznam" class="des_icon" />
       <h2>{{ wishlist.list_name }}</h2>
-    </div>
-    <div v-if="isModalOpen" class="modal">
-      <wishForm v-on:push="addWish($event)" @hide="hide" />
-      <button @click="hide" class="main__button hide__btn">X</button>
     </div>
 
     <div v-if="wishlist.wishes.length === 0" class="empty__list">
       Váš seznam je zatím prázdný
     </div>
+
     <div class="wish_list">
       <wishList
         v-if="wishlist.wishes.length > 0"
@@ -26,6 +24,11 @@
 
     <div class="add_new_wish_btn">
       <button @click="show" class="main__button">Vložit přání</button>
+    </div>
+
+    <div v-if="isModalOpen" class="modal">
+      <wishForm v-on:push="addWish($event)" @hide="hide" />
+      <button @click="hide" class="main__button hide__btn">X</button>
     </div>
 
     <div class="share_link">
@@ -42,6 +45,11 @@ import firebase from "firebase/app";
 
 export default {
   name: "WishPage",
+
+  components: {
+    wishList: WishList,
+    wishForm: WishForm,
+  },
 
   data() {
     return {
@@ -61,11 +69,6 @@ export default {
     return {
       wishlist: db.collection("wishlists").doc(this.wishlistID),
     };
-  },
-
-  components: {
-    wishList: WishList,
-    wishForm: WishForm,
   },
 
   methods: {

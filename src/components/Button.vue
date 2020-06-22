@@ -4,40 +4,54 @@
       class="wish_button"
       v-if="taken === false && myList === false"
       @click="changeTaken"
-    >Zamluv si mě</button>
+    >
+      Zamluv si mě
+    </button>
+
     <button
       class="wish_button"
       v-else-if="taken === true && myList === false && anotherUser === false"
       @click="changeTaken"
-    >Zamluveno</button>
+    >
+      Zamluveno
+    </button>
+
     <div
       class="not_available"
       v-if="myList === false && anotherUser === true && taken === true"
-    >Není k dispozici</div>
+    >
+      Není k dispozici
+    </div>
+
     <button
       class="remove_wish_button"
       v-if="myList === true && taken === false"
       @click="deleteWish"
-    >Smazat přání</button>
+    >
+      Smazat přání
+    </button>
+
     <button
       class="remove_wish_button"
       v-if="myList === true && taken === true"
       :disabled="false"
       @click="message"
-    >Smazat přání</button>
+    >
+      Smazat přání
+    </button>
   </div>
 </template>
 <script>
 export default {
   name: "BookButton",
 
-  props: ["taken", "myList", "anotherUser"],
-
   data() {
     return {
-      disabled: false
+      disabled: false,
     };
   },
+
+  props: ["taken", "myList", "anotherUser"],
 
   methods: {
     changeTaken() {
@@ -49,8 +63,8 @@ export default {
     },
     deleteWish() {
       this.$emit("deleteWish");
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -1,8 +1,9 @@
 <template>
-  <div name="newWish" class="newWish">
+  <div name="newList" class="newList">
     <div class="form__head">
       <h2>Pojmenujte svůj seznam</h2>
     </div>
+
     <div class="form__body">
       <input
         type="text"
@@ -53,7 +54,7 @@ export default {
 };
 </script>
 <style scoped>
-.newWish {
+.newList {
   color: #cac5be;
   display: flex;
   flex-direction: column;

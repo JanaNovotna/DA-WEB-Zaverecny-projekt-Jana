@@ -5,6 +5,7 @@
         <h3>{{ wish.title }}</h3>
         <p>{{ wish.description }}</p>
       </div>
+
       <p class="wish_link" v-if="wish.link !== ''">
         <a v-bind:href="wish.link" target="_blank">Odkaz na dárek</a>
       </p>
@@ -29,6 +30,7 @@ import firebase from "firebase/app";
 
 export default {
   name: "Wish",
+
   components: {
     myButton: Button,
   },

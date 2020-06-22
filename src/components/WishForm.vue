@@ -3,6 +3,7 @@
     <div class="form__head">
       <h2>Přidání nového dárku:</h2>
     </div>
+
     <div class="form__body">
       <label for="title">Název dárku:</label>
       <input type="text" v-model="$v.title.$model" id="title" />
@@ -50,18 +51,6 @@ export default {
     };
   },
 
-  validations: {
-    title: {
-      required,
-    },
-    description: {
-      required,
-    },
-    link: {
-      url,
-    },
-  },
-
   props: ["idx"],
 
   methods: {
@@ -75,6 +64,18 @@ export default {
         link: this.link,
       });
       this.$emit("hide");
+    },
+  },
+
+  validations: {
+    title: {
+      required,
+    },
+    description: {
+      required,
+    },
+    link: {
+      url,
     },
   },
 };

@@ -10,9 +10,6 @@
         alt="Šipka dolů"
         v-scroll-to="'#welcome'"
       />
-      <!--       <a href="#descrip" class="down_arrow">
-        
-      </a>-->
     </div>
 
     <div v-if="isModalOpen" class="modal">
@@ -42,11 +39,11 @@
         Vytvořte nový seznam přání
       </button>
     </div>
-
     <div v-else class="welcome" id="welcome">
       <div class="title">
         <h2>Jak to funguje?</h2>
       </div>
+
       <div class="how_it_works">
         <div class="description" id="descrip">
           <img src="../assets/img/list.png" alt="Seznam" class="des_icon" />
