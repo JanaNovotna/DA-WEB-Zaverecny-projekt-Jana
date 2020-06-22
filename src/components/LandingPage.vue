@@ -4,9 +4,15 @@
       <img src="../assets/img/4U.png" alt="logo" class="logo" />
       <h1 class="hidden">Dárky bez starostí</h1>
       <p class="claim">Sdílejte svá přání s rodinou a přáteli.</p>
-      <a href="#descrip" class="down_arrow">
-        <img src="../assets/img/downBtn.png" alt="Šipka dolů" />
-      </a>
+      <img
+        class="down_arrow"
+        src="../assets/img/downBtn.png"
+        alt="Šipka dolů"
+        v-scroll-to="'#welcome'"
+      />
+      <!--       <a href="#descrip" class="down_arrow">
+        
+      </a>-->
     </div>
 
     <div v-if="isModalOpen" class="modal">
@@ -14,7 +20,7 @@
       <button @click="hide" class="main__button hide__btn">X</button>
     </div>
 
-    <div v-if="wishlists.length > 0" class="existing_list" id="descrip">
+    <div v-if="wishlists.length > 0" class="existing_list" id="welcome">
       <img src="../assets/img/list.png" alt="Seznam" class="des_icon" />
       <p>Tady jsou vaše seznamy, můžete je upravit a znovu odeslat:</p>
 
@@ -34,7 +40,7 @@
       </button>
     </div>
 
-    <div v-else class="welcome">
+    <div v-else class="welcome" id="welcome">
       <div class="title">
         <h2>Jak to funguje?</h2>
       </div>
@@ -158,7 +164,7 @@ p {
 
 .down_arrow {
   position: absolute;
-  bottom: 14px;
+  bottom: 18px;
 }
 
 .down_arrow:hover {
