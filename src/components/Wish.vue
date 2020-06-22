@@ -4,8 +4,7 @@
       <h3>{{ wish.title }}</h3>
       <p>{{ wish.description }}</p>
       <p>
-        Odkaz:
-        <a v-bind:href="wish.link" target="_blank">ZDE</a>
+        <a v-bind:href="wish.link" target="_blank">Odkaz na dárek</a>
       </p>
     </div>
     <div class="wish-btn">
@@ -68,13 +67,22 @@ export default {
 }
 .wish_content {
   flex-basis: 75%;
+  align-self: flex-start;
   margin-right: 0.5rem;
-  word-break: break-all;
+  /* word-break: break-all; */
   font-weight: 500;
 }
 
 .wish_content p {
   margin-top: 0.5rem;
+}
+
+.wish_content a {
+  color: black;
+}
+
+.wish_content a:hover {
+  color: #59cbbc;
 }
 
 .wish_btn {
