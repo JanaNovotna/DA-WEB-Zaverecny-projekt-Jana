@@ -4,6 +4,7 @@
       <h1>Seznam mých přání</h1>
     </div>
     <div class="wish_list_name">
+      <img src="../assets/img/list.png" alt="Seznam" class="des_icon" />
       <h2>{{wishlist.list_name}}</h2>
     </div>
     <div v-if="isModalOpen" class="modal">
@@ -104,12 +105,21 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../assets/img/banner.jpg");
+  background: url("../assets/img/banner.jpg") #59cbbc;
   background-position: center center;
   background-size: cover;
   height: 15vh;
   width: 100%;
   margin-bottom: 2rem;
+}
+
+.wish_list_name {
+  margin-bottom: 1rem;
+}
+
+.des_icon {
+  width: 4rem;
+  margin: 1rem auto;
 }
 
 .empty__list {
@@ -118,20 +128,26 @@ export default {
   font-weight: 500;
 }
 
+.add_new_wish_btn {
+  margin-top: 2rem;
+}
+
 .share_link {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 1px solid black;
   border-radius: 5px;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 .url {
-  margin: 0.75rem;
+  flex-basis: 80%;
+  margin-left: 0.75rem;
+  word-break: break-all;
 }
 
 .small__button {
-  max-width: 10vw;
+  flex-basis: 19%;
   font-size: 1rem;
   margin: 0;
 }

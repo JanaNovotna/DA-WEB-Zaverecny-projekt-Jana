@@ -120,7 +120,7 @@ p {
 }
 
 .header {
-  background: url("../assets/img/newDesign.jpg");
+  background: url("../assets/img/newDesign.jpg") #59cbbc;
   background-position: center center;
   background-size: cover;
   width: 100%;

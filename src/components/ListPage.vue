@@ -38,7 +38,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../assets/img/banner.jpg");
+  background: url("../assets/img/banner.jpg") #59cbbc;
   background-position: center center;
   background-size: cover;
   height: 15vh;
