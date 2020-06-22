@@ -4,20 +4,11 @@
       <h2>Pojmenujte svůj seznam</h2>
     </div>
     <div class="form__body">
-      <input
-        type="text"
-        v-model="$v.list_name.$model"
-        id="list_name"
-        placeholder="Název seznamu"
-      />
+      <input type="text" v-model="$v.list_name.$model" id="list_name" placeholder="Název seznamu" />
 
-      <p class="error" v-if="$v.list_name.required === false">
-        Toto pole je povinné
-      </p>
+      <p class="error" v-if="$v.list_name.required === false">Toto pole je povinné</p>
 
-      <button v-on:click="submitListName" class="main__button add_btn">
-        Odeslat
-      </button>
+      <button v-on:click="submitListName" class="main__button add_btn">Odeslat</button>
     </div>
   </div>
 </template>
@@ -29,14 +20,14 @@ export default {
 
   data() {
     return {
-      list_name: "",
+      list_name: ""
     };
   },
 
   validations: {
     list_name: {
-      required,
-    },
+      required
+    }
   },
 
   methods: {
@@ -45,11 +36,11 @@ export default {
     },
     submitListName() {
       this.$emit("push", {
-        list_name: this.list_name,
+        list_name: this.list_name
       });
       this.$emit("hide");
-    },
-  },
+    }
+  }
 };
 </script>
 <style scoped>
@@ -58,9 +49,9 @@ export default {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  padding: 1rem;
-  width: 95vw;
   margin: 0 auto;
+  max-width: 80%;
+  padding: 4rem 0.5rem 3rem;
 }
 
 .form__head {
@@ -73,21 +64,47 @@ export default {
   flex-direction: column;
 }
 
-input,
-textarea {
+input {
   background-color: #d4d3d3;
   color: #000;
-  margin: 0.75rem;
+  margin: 1.5rem 0;
+  padding: 0.5rem;
   font-size: 1rem;
+  max-width: 75vw;
 }
 
 .add_btn {
-  width: 30vw;
-  margin: 2rem;
+  max-width: 75vw;
+  margin: 2rem 0;
 }
 
 .error {
   color: white;
   font-size: 0.9rem;
+}
+
+@media (min-width: 640px) {
+  .newWish {
+    max-width: 60%;
+  }
+
+  .newWish h2 {
+    font-size: 2rem;
+  }
+
+  .error {
+    font-size: 1rem;
+  }
+
+  input {
+    padding: 0.8rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .newWish {
+    max-width: 50%;
+  }
 }
 </style>
