@@ -5,7 +5,7 @@
         <h3>{{ wish.title }}</h3>
         <p>{{ wish.description }}</p>
       </div>
-      <p class="wish_link">
+      <p class="wish_link" v-if="wish.link !== ''">
         <a v-bind:href="wish.link" target="_blank">Odkaz na dárek</a>
       </p>
     </div>
@@ -29,12 +29,12 @@ import firebase from "firebase/app";
 export default {
   name: "Wish",
   components: {
-    myButton: Button,
+    myButton: Button
   },
 
   data() {
     return {
-      currentUserID: localStorage.userID,
+      currentUserID: localStorage.userID
     };
   },
 
@@ -44,7 +44,7 @@ export default {
     async changeTaken() {
       const wish = db.collection("wishes").doc(this.wish.id);
       await wish.update({
-        takenBy: this.wish.takenBy === null ? localStorage.userID : null,
+        takenBy: this.wish.takenBy === null ? localStorage.userID : null
       });
     },
     async deleteWish() {
@@ -52,10 +52,10 @@ export default {
       await wish.delete();
       const wishlist = db.collection("wishlists").doc(this.wishlistID);
       await wishlist.update({
-        wishes: firebase.firestore.FieldValue.arrayRemove(wish),
+        wishes: firebase.firestore.FieldValue.arrayRemove(wish)
       });
-    },
-  },
+    }
+  }
 };
 </script>
 <style scoped>
