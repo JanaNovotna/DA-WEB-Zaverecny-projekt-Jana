@@ -20,7 +20,7 @@
         type="url"
         v-model="$v.link.$model"
         id="web_address"
-        placeholder="http://www.adresa.xyz přípdně https://www.adresa.xyz"
+        placeholder="http://www.adresa.xyz nebo https://www.adresa.xyz"
       />
 
       <p class="error" v-if="$v.link.url === false">Zadejte prosím platné URL</p>
