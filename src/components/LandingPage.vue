@@ -20,24 +20,21 @@
     <div v-if="wishlists.length > 0" class="existing_list" id="welcome">
       <img src="../assets/img/list.png" alt="Seznam" class="des_icon" />
       <p>
-        Tady najdete vaše seznamy přání. <br />
-        Můžete je dále upravovat nebo sdílet s dalšími osobami.
+        Tady najdete vaše seznamy přání.
+        <br />Můžete je dále upravovat nebo sdílet s dalšími osobami.
       </p>
 
-      <div
-        v-for="(wishlist, index) in wishlists"
-        v-bind:key="index"
-        class="list_link"
-      >
+      <div v-for="(wishlist, index) in wishlists" v-bind:key="index" class="list_link">
         Seznam
         <router-link :to="{ path: `/muj_seznam/${wishlist.id}` }" class="link">
           <span class="list_name">{{ wishlist.list_name }}</span>
         </router-link>
       </div>
       <p class="or">Nebo:</p>
-      <button @click="isModalOpen = true" class="main__button add__button">
-        Vytvořte nový seznam přání
-      </button>
+      <button
+        @click="isModalOpen = true"
+        class="main__button add__button"
+      >Vytvořte nový seznam přání</button>
     </div>
     <div v-else class="welcome" id="welcome">
       <div class="title">
@@ -54,21 +51,19 @@
           <p>
             Sdílejte svůj seznam.
             <br />Přátelé, členové rodiny nebo kolegové si na seznamu zamluví
-            dárek, <br />který vám chtějí pořídit.
+            dárek,
+            <br />který vám chtějí pořídit.
           </p>
         </div>
         <div class="description">
-          <img
-            src="../assets/img/gift.png"
-            alt="Otevřený dárek"
-            class="des_icon"
-          />
+          <img src="../assets/img/gift.png" alt="Otevřený dárek" class="des_icon" />
           <p>Těšte se na to, co dostane za dárky!</p>
         </div>
       </div>
-      <button @click="isModalOpen = true" class="main__button add__button or">
-        Vytvořit nový seznam přání
-      </button>
+      <button
+        @click="isModalOpen = true"
+        class="main__button add__button or"
+      >Vytvořit nový seznam přání</button>
     </div>
   </div>
 </template>
@@ -136,7 +131,7 @@ p {
 }
 
 .header {
-  background: url("/assets/img/newDesign.jpg") #59cbbc;
+  background: url("/assets/img/background2.jpg") #59cbbc;
   background-position: center center;
   background-size: cover;
   width: 100%;
